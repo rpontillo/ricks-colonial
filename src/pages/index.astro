@@ -1,0 +1,57 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <section class="relative isolate min-h-[48rem] overflow-hidden bg-sand pt-20">
+    <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_25%,rgba(198,154,82,0.24),transparent_26%),linear-gradient(135deg,#faf8f4_0%,#efe7dd_58%,#dfe6eb_100%)]"></div>
+    <div class="absolute inset-y-0 right-0 -z-10 hidden w-[48%] overflow-hidden lg:block">
+      <div class="absolute inset-8 rounded-b-[5rem] rounded-tl-[9rem] bg-[linear-gradient(145deg,#d8e0e5,#9fb0bc)] shadow-2xl"></div>
+      <svg viewBox="0 0 800 900" class="absolute inset-0 h-full w-full text-white/65" aria-hidden="true">
+        <path d="M92 525 405 218l312 307" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+        <path d="M160 484v278h490V484M302 762V570h201v192" fill="none" stroke="currentColor" stroke-width="20"/>
+        <path d="M218 530h95v106h-95zm367 0h-95v106h95z" fill="none" stroke="currentColor" stroke-width="16"/>
+      </svg>
+    </div>
+
+    <div class="site-container grid min-h-[calc(48rem-5rem)] items-center py-20 lg:grid-cols-[1.05fr_0.95fr]">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Trusted Connecticut craftsmanship</p>
+        <h1 class="mt-7 max-w-3xl font-display text-[clamp(3.5rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.04em] text-navy-deep">
+          Beautiful homes deserve beautiful craftsmanship.
+        </h1>
+        <p class="mt-7 max-w-xl text-lg leading-8 text-muted md:text-xl">A premium Astro foundation for Rick's new site—responsive, accessible, fast, and ready for the full homepage build in Sprint 2.</p>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="rounded-full bg-navy px-6 py-4 text-center text-sm font-extrabold text-white shadow-xl shadow-navy/20 transition hover:-translate-y-0.5 hover:bg-navy-deep" href="/contact/">Get a Free Estimate</a>
+          <a class="rounded-full border border-navy/20 bg-white/55 px-6 py-4 text-center text-sm font-extrabold text-navy-deep backdrop-blur transition hover:bg-white" href="/gallery/">View Our Work</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-navy/12 pt-6 text-sm font-bold text-navy-deep/70">
+          <span>40+ years experience</span>
+          <span>Fully insured</span>
+          <span>Free estimates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell bg-cream">
+    <div class="site-container">
+      <p class="eyebrow">Sprint 1 foundation</p>
+      <div class="mt-6 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <h2 class="font-display text-5xl font-semibold leading-none tracking-tight text-navy-deep md:text-6xl">The shell is ready for page-by-page development.</h2>
+        <p class="max-w-2xl text-base leading-8 text-muted lg:justify-self-end">This starter includes the global layout, Tailwind v4 theme tokens, responsive navigation, footer, accessibility baseline, SEO metadata, and a restrained custom CSS layer.</p>
+      </div>
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        {[
+          ['Tailwind-first', 'Utilities cover layout, responsive behavior, spacing, typography, and routine component styling.'],
+          ['Small custom layer', 'Only global primitives, menu transitions, focus behavior, and special UI treatments live in CSS.'],
+          ['Astro-native', 'Static output, strict TypeScript, semantic components, and almost no client-side JavaScript.'],
+        ].map(([title, body]) => (
+          <article class="rounded-card border border-navy/8 bg-white p-7 shadow-card">
+            <h3 class="font-display text-3xl font-semibold text-navy-deep">{title}</h3>
+            <p class="mt-4 text-sm leading-7 text-muted">{body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,36 @@
+---
+import Brand from './Brand.astro';
+const year = new Date().getFullYear();
+---
+<footer class="bg-navy-deep text-white">
+  <div class="site-container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
+    <div class="max-w-md">
+      <Brand inverse />
+      <p class="mt-6 text-sm leading-7 text-white/68">Premium interior and exterior painting rooted in careful preparation, honest service, and lasting craftsmanship.</p>
+      <a class="mt-7 inline-flex rounded-full bg-gold px-5 py-3 text-sm font-extrabold text-navy-deep transition hover:-translate-y-0.5 hover:bg-gold-light" href="/contact/">Request an Estimate</a>
+    </div>
+    <div>
+      <h2 class="font-display text-xl font-semibold">Explore</h2>
+      <ul class="mt-5 space-y-3 text-sm text-white/68">
+        <li><a class="hover:text-white" href="/services/">Services</a></li>
+        <li><a class="hover:text-white" href="/gallery/">Project Gallery</a></li>
+        <li><a class="hover:text-white" href="/about/">About Rick's</a></li>
+        <li><a class="hover:text-white" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-display text-xl font-semibold">Contact</h2>
+      <address class="mt-5 space-y-3 text-sm not-italic text-white/68">
+        <p>Central Connecticut</p>
+        <p><a class="hover:text-white" href="tel:+18600000000">(860) 675-6035</a></p>
+        <p><a class="hover:text-white" href="mailto:RicksColonial@yahoo.com">RicksColonial@yahoo.com</a></p>
+        <p>Mon–Fri, 8am–5pm</p>
+      </address>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="site-container flex flex-col gap-2 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} Rick's Colonial Painting. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,75 @@
+---
+import Brand from './Brand.astro';
+
+const pathname = Astro.url.pathname;
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Gallery', href: '/gallery/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+];
+---
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-[background,box-shadow] duration-300">
+  <div class="site-container flex h-20 items-center justify-between gap-6">
+    <Brand compact />
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+      {navItems.map((item) => (
+        <a
+          class="nav-link text-sm font-bold text-navy-deep/80 transition-colors hover:text-navy-deep"
+          href={item.href}
+          aria-current={pathname === item.href ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-4 lg:flex">
+      <a class="text-sm font-extrabold text-navy-deep" href="tel:+18600000000">(860) 675-6035</a>
+      <a class="rounded-full bg-navy px-5 py-3 text-sm font-extrabold text-white shadow-lg shadow-navy/15 transition hover:-translate-y-0.5 hover:bg-navy-deep" href="/contact/">
+        Free Estimate
+      </a>
+    </div>
+
+    <button id="menu-toggle" class="grid size-11 place-items-center rounded-full border border-navy/15 text-navy-deep lg:hidden" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+      <svg id="menu-open-icon" viewBox="0 0 24 24" class="size-5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg id="menu-close-icon" viewBox="0 0 24 24" class="hidden size-5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="mobile-panel absolute inset-x-0 top-20 border-t border-navy/10 bg-cream shadow-2xl lg:hidden" data-open="false">
+    <nav class="site-container grid gap-1 py-5" aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a class="rounded-xl px-4 py-3 text-lg font-bold text-navy-deep hover:bg-sand/60" href={item.href}>{item.label}</a>
+      ))}
+      <div class="mt-4 grid grid-cols-2 gap-3 border-t border-navy/10 pt-5">
+        <a class="rounded-full border border-navy/20 px-4 py-3 text-center text-sm font-extrabold text-navy-deep" href="tel:+18600000000">Call Now</a>
+        <a class="rounded-full bg-navy px-4 py-3 text-center text-sm font-extrabold text-white" href="/contact/">Free Estimate</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('#site-header');
+  const toggle = document.querySelector('#menu-toggle');
+  const menu = document.querySelector('#mobile-menu');
+  const openIcon = document.querySelector('#menu-open-icon');
+  const closeIcon = document.querySelector('#menu-close-icon');
+
+  const setHeaderState = () => header?.classList.toggle('header-scrolled', window.scrollY > 12);
+  setHeaderState();
+  window.addEventListener('scroll', setHeaderState, { passive: true });
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+    menu?.setAttribute('data-open', String(!isOpen));
+    openIcon?.classList.toggle('hidden', !isOpen);
+    closeIcon?.classList.toggle('hidden', isOpen);
+    document.body.classList.toggle('menu-open', !isOpen);
+  });
+</script>
