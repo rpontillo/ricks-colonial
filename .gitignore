@@ -11,6 +11,9 @@ build
 dist
 scripts/transit/source/
 
+# Astro dev-server runtime state
+.astro/dev.json
+
 # exclude IDE test builds
 core/build
 ToolExtrasBundle.js
