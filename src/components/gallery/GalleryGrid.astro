@@ -7,11 +7,11 @@ import { galleryFilters, galleryProjects } from '../../data/gallery';
       <button type="button" class:list={['gallery-filter rounded-full border px-5 py-2.5 text-sm font-extrabold transition', index === 0 ? 'border-navy-800 bg-navy-800 text-white' : 'border-navy-900/15 text-navy-900 hover:border-navy-800']} data-filter={value} aria-pressed={index === 0 ? 'true' : 'false'}>{label}</button>
     ))}
   </div>
-  <div class="gallery-grid mt-10 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="gallery-grid mt-10 grid auto-rows-60 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {galleryProjects.map((project) => (
       <button type="button" class:list={['gallery-item group relative overflow-hidden rounded-card text-left shadow-soft', project.span]} data-category={project.category} data-title={project.title} data-location={project.location} data-image={project.image} aria-label={`View ${project.title}`}>
         <img src={project.image} alt={project.title} class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-        <span class="absolute inset-0 bg-gradient-to-t from-navy-950/88 via-transparent to-transparent"></span>
+        <span class="absolute inset-0 bg-linear-to-t from-navy-950/88 via-transparent to-transparent"></span>
         <span class="absolute inset-x-0 bottom-0 p-6 text-white">
           <span class="block text-xs font-extrabold uppercase tracking-[.16em] text-gold-400">{project.category}</span>
           <span class="mt-2 block font-display text-2xl font-bold">{project.title}</span>

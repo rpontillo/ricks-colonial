@@ -11,7 +11,7 @@ import { services } from '../../data/home';
 
     <div class="mt-12 grid gap-6 lg:grid-cols-2">
       {services.slice(0, 2).map((service) => (
-        <article class="service-card group relative min-h-[31rem] overflow-hidden rounded-[1.5rem] bg-navy-950 shadow-soft" data-reveal>
+        <article class="service-card group relative min-h-124 overflow-hidden rounded-3xl bg-navy-950 shadow-soft" data-reveal>
           <img src={service.image} alt="" class="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
           <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_25%,rgba(20,39,61,.92)_100%)]"></div>
           <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
@@ -26,7 +26,7 @@ import { services } from '../../data/home';
     <div class="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {services.slice(2).map((service) => (
         <article class="premium-card group overflow-hidden rounded-card" data-reveal>
-          <div class="aspect-[4/3] overflow-hidden">
+          <div class="aspect-4/3 overflow-hidden">
             <img src={service.image} alt="" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
           <div class="p-6">

@@ -5,18 +5,18 @@ import { galleryItems } from '../../data/home';
   <div class="site-container">
     <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-reveal>
       <div class="max-w-3xl">
-        <p class="eyebrow !text-gold-400">Selected work</p>
-        <h2 class="section-title mt-4 !text-white">Craftsmanship made visible.</h2>
+        <p class="eyebrow text-gold-400!">Selected work</p>
+        <h2 class="section-title mt-4 text-white!">Craftsmanship made visible.</h2>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-white/65">Explore exterior transformations, refined interiors, restored decks, and the details that make each project feel complete.</p>
       </div>
       <a href="/gallery" class="button-on-dark shrink-0">View Full Gallery <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="mt-12 grid auto-rows-[16rem] gap-5 md:grid-cols-3" data-reveal>
+    <div class="mt-12 grid auto-rows-64 gap-5 md:grid-cols-3" data-reveal>
       {galleryItems.map((item) => (
         <a href="/gallery" class:list={['gallery-tile group relative overflow-hidden rounded-card', item.className]}>
           <img src={item.image} alt={item.title} class="size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/10 to-transparent"></div>
+          <div class="absolute inset-0 bg-linear-to-t from-navy-950/90 via-navy-950/10 to-transparent"></div>
           <div class="absolute inset-x-0 bottom-0 p-6">
             <span class="text-xs font-extrabold uppercase tracking-[.16em] text-gold-400">{item.category}</span>
             <h3 class="mt-2 text-2xl text-white">{item.title}</h3>
