@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout
+  title="Estimate Request Received | Rick's Colonial Painting"
+  description="Your estimate request has been received by Rick's Colonial Painting."
+  noindex
+>
+  <section class="section-space bg-warm-50">
+    <div class="site-container">
+      <div class="mx-auto max-w-3xl rounded-card bg-white p-8 text-center shadow-soft sm:p-12">
+        <p class="eyebrow">Request received</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl">Thank you for reaching out.</h1>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8">
+          We’ve received your project details and will follow up to discuss your estimate.
+        </p>
+        <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <a class="button-primary" href="/">Return home</a>
+          <a class="button-secondary" href="/gallery">View our work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
