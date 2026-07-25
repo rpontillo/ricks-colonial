@@ -1,25 +1,12 @@
-<form
-  class="rounded-card bg-white p-6 shadow-soft sm:p-9"
-  name="estimate-request"
-  method="post"
-  action="/thank-you"
-  data-netlify="true"
-  netlify-honeypot="company-website"
-  data-estimate-form
->
-  <input type="hidden" name="form-name" value="estimate-request" />
-  <p class="hidden" aria-hidden="true">
-    <label>Leave this field empty: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
+<div class="overflow-hidden rounded-card bg-white shadow-soft">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSegYYlOSgqe0ybxH2VQzgyXwNKObFuZZIgS1F69KfhYP5qGMw/viewform?embedded=true"
+    title="Request a free painting estimate"
+    class="block min-h-305 w-full border-0 sm:min-h-280"
+    loading="lazy"
+  ></iframe>
+  <p class="border-t border-navy-900/10 p-4 text-center text-sm text-slate-700/75">
+    Having trouble with the form?
+    <a class="font-bold text-navy-800 underline" href="https://forms.gle/DpzxoWiMhwuHp3Jz9">Open it in a new window.</a>
   </p>
-  <div class="grid gap-6 sm:grid-cols-2">
-    <label class="form-field"><span>Name *</span><input name="name" autocomplete="name" required /></label>
-    <label class="form-field"><span>Email *</span><input type="email" name="email" autocomplete="email" required /></label>
-    <label class="form-field"><span>Phone *</span><input type="tel" name="phone" autocomplete="tel" required /></label>
-    <label class="form-field"><span>Town / city</span><input name="city" autocomplete="address-level2" /></label>
-    <label class="form-field sm:col-span-2"><span>Project type</span><select name="project"><option value="">Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Deck restoration</option><option>Cabinet painting</option><option>Power washing</option><option>Commercial painting</option></select></label>
-    <label class="form-field sm:col-span-2"><span>Tell us about your project *</span><textarea name="message" rows="6" required placeholder="Rooms or exterior areas, surface condition, timing, and anything else we should know."></textarea></label>
-    <label class="flex items-start gap-3 text-sm leading-6 sm:col-span-2"><input type="checkbox" name="consent" class="mt-1 size-4 accent-navy-800" required /><span>I agree that Rick’s Colonial Painting may contact me about this estimate request.</span></label>
-  </div>
-  <button class="button-primary mt-7 w-full sm:w-auto" type="submit">Request Free Estimate</button>
-  <p class="mt-4 text-sm leading-6 text-slate-700/75">Your project details are sent securely and used only to respond to your estimate request.</p>
-</form>
+</div>
