@@ -1,0 +1,20 @@
+---
+import { site } from '../../data/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HousePainter',
+  '@id': `${Astro.site}#business`,
+  name: site.name,
+  url: Astro.site,
+  telephone: site.phoneDisplay,
+  email: site.email,
+  description: 'Family-owned interior and exterior painting serving Connecticut homeowners with careful preparation and owner-supervised craftsmanship.',
+  areaServed: site.region,
+  openingHours: 'Mo-Fr 08:00-17:00',
+  priceRange: '$$',
+  image: new URL('/images/social-card.png', Astro.site),
+  sameAs: site.socialLinks,
+};
+---
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

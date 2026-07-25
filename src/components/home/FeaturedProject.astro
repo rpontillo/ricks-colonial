@@ -30,16 +30,22 @@
 </section>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-comparison]').forEach((comparison) => {
-    const range = comparison.querySelector<HTMLInputElement>('[data-range]');
-    const before = comparison.querySelector<HTMLElement>('[data-before]');
-    const divider = comparison.querySelector<HTMLElement>('[data-divider]');
-    const update = () => {
-      const value = range?.value ?? '50';
-      if (before) before.style.clipPath = `inset(0 ${100 - Number(value)}% 0 0)`;
-      if (divider) divider.style.left = `${value}%`;
-    };
-    range?.addEventListener('input', update);
-    update();
-  });
+  const initializeComparisons = () => {
+    document.querySelectorAll<HTMLElement>('[data-comparison]').forEach((comparison) => {
+      if (comparison.dataset.initialized === 'true') return;
+      comparison.dataset.initialized = 'true';
+      const range = comparison.querySelector<HTMLInputElement>('[data-range]');
+      const before = comparison.querySelector<HTMLElement>('[data-before]');
+      const divider = comparison.querySelector<HTMLElement>('[data-divider]');
+      const update = () => {
+        const value = range?.value ?? '50';
+        if (before) before.style.clipPath = `inset(0 ${100 - Number(value)}% 0 0)`;
+        if (divider) divider.style.left = `${value}%`;
+      };
+      range?.addEventListener('input', update);
+      update();
+    });
+  };
+  document.addEventListener('astro:page-load', initializeComparisons);
+  initializeComparisons();
 </script>

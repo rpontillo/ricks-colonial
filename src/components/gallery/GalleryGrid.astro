@@ -31,8 +31,10 @@ import { galleryFilters, galleryProjects } from '../../data/gallery';
   </dialog>
 </div>
 <script>
-  const root = document.querySelector<HTMLElement>('[data-gallery]');
-  if (root) {
+  const initializeGallery = () => {
+    const root = document.querySelector<HTMLElement>('[data-gallery]');
+    if (!root || root.dataset.initialized === 'true') return;
+    root.dataset.initialized = 'true';
     const filters = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const items = [...root.querySelectorAll<HTMLButtonElement>('.gallery-item')];
     filters.forEach((filter) => filter.addEventListener('click', () => {
@@ -43,6 +45,7 @@ import { galleryFilters, galleryProjects } from '../../data/gallery';
         button.classList.toggle('text-white', active);
         button.classList.toggle('text-navy-900', !active);
         button.classList.toggle('border-navy-800', active);
+        button.setAttribute('aria-pressed', String(active));
       });
       items.forEach((item) => item.hidden = value !== 'all' && item.dataset.category !== value);
     }));
@@ -52,13 +55,13 @@ import { galleryFilters, galleryProjects } from '../../data/gallery';
     const location = root.querySelector<HTMLElement>('.gallery-dialog__location');
     items.forEach((item) => item.addEventListener('click', () => {
       if (!dialog || !image || !title || !location) return;
-      image.src = item.dataset.image ?? '';
-      image.alt = item.dataset.title ?? '';
-      title.textContent = item.dataset.title ?? '';
-      location.textContent = item.dataset.location ?? '';
+      image.src = item.dataset.image ?? ''; image.alt = item.dataset.title ?? '';
+      title.textContent = item.dataset.title ?? ''; location.textContent = item.dataset.location ?? '';
       dialog.showModal();
     }));
     root.querySelector<HTMLButtonElement>('.gallery-dialog__close')?.addEventListener('click', () => dialog?.close());
     dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-  }
+  };
+  document.addEventListener('astro:page-load', initializeGallery);
+  initializeGallery();
 </script>

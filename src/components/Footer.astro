@@ -1,36 +1,34 @@
 ---
-import Brand from './Brand.astro';
-const year = new Date().getFullYear();
+import { site } from '../data/site';
 ---
-<footer class="bg-navy-deep text-white">
-  <div class="site-container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
-    <div class="max-w-md">
-      <Brand inverse />
-      <p class="mt-6 text-sm leading-7 text-white/68">Premium interior and exterior painting rooted in careful preparation, honest service, and lasting craftsmanship.</p>
-      <a class="mt-7 inline-flex rounded-full bg-gold px-5 py-3 text-sm font-extrabold text-navy-deep transition hover:-translate-y-0.5 hover:bg-gold-light" href="/contact/">Request an Estimate</a>
+<footer class="bg-navy-950 text-white">
+  <div class="site-container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <p class="font-display text-3xl">{site.name}</p>
+      <p class="mt-4 max-w-md leading-7 text-white/70">Professional interior and exterior painting rooted in careful preparation, lasting finishes, and respect for your home.</p>
     </div>
     <div>
-      <h2 class="font-display text-xl font-semibold">Explore</h2>
-      <ul class="mt-5 space-y-3 text-sm text-white/68">
-        <li><a class="hover:text-white" href="/services/">Services</a></li>
-        <li><a class="hover:text-white" href="/gallery/">Project Gallery</a></li>
-        <li><a class="hover:text-white" href="/about/">About Rick's</a></li>
-        <li><a class="hover:text-white" href="/contact/">Contact</a></li>
+      <h2 class="font-sans text-sm font-black uppercase tracking-[0.18em] text-gold-400">Explore</h2>
+      <ul class="mt-4 space-y-3 text-white/75">
+        <li><a class="hover:text-white" href="/services">Services</a></li>
+        <li><a class="hover:text-white" href="/gallery">Gallery</a></li>
+        <li><a class="hover:text-white" href="/about">About</a></li>
+        <li><a class="hover:text-white" href="/contact">Free Estimate</a></li>
       </ul>
     </div>
     <div>
-      <h2 class="font-display text-xl font-semibold">Contact</h2>
-      <address class="mt-5 space-y-3 text-sm not-italic text-white/68">
-        <p>Central Connecticut</p>
-        <p><a class="hover:text-white" href="tel:+18600000000">(860) 675-6035</a></p>
-        <p><a class="hover:text-white" href="mailto:RicksColonial@yahoo.com">RicksColonial@yahoo.com</a></p>
-        <p>Mon–Fri, 8am–5pm</p>
+      <h2 class="font-sans text-sm font-black uppercase tracking-[0.18em] text-gold-400">Contact</h2>
+      <address class="mt-4 space-y-3 not-italic text-white/75">
+        <p>{site.region}</p>
+        <p><a class="hover:text-white" href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a></p>
+        <p><a class="hover:text-white" href={`mailto:${site.email}`}>{site.email}</a></p>
       </address>
     </div>
   </div>
   <div class="border-t border-white/10">
-    <div class="site-container flex flex-col gap-2 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-      <p>© {year} Rick's Colonial Painting. All rights reserved.</p>
+    <div class="site-container flex flex-col gap-2 py-6 text-sm text-white/55 sm:flex-row sm:justify-between">
+      <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+      <p>Serving Connecticut homeowners with care.</p>
     </div>
   </div>
 </footer>

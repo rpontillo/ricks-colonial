@@ -9,4 +9,5 @@ export const site = {
   email: 'RicksColonial@yahoo.com',
   region: 'Farmington Valley and Greater Hartford, Connecticut',
   hours: 'Monday–Friday, 8:00 AM–5:00 PM',
+  socialLinks: [] as string[]
 } as const;
