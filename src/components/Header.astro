@@ -12,10 +12,10 @@ const navItems: ReadonlyArray<readonly [label: string, href: string]> = [
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 ---
-<header class="sticky top-0 z-50 border-b border-navy-900/10 bg-warm-50/95 backdrop-blur-xl" data-site-header>
-  <div class="site-container flex min-h-20 items-center justify-between gap-6">
+<header class="sticky top-0 z-50 border-b border-navy-900/10 bg-warm-50/95 backdrop-blur-xl" data-site-header data-scrolled="false">
+  <div class="site-container flex min-h-[4.75rem] items-center justify-between gap-6">
     <a href="/" class="flex items-center gap-3" aria-label={`${site.name} home`}>
-      <span class="grid size-11 place-items-center rounded-full bg-navy-800 font-display text-xl font-bold text-white" aria-hidden="true">R</span>
+      <span class="grid size-11 place-items-center rounded-full border border-gold-500/35 bg-navy-950 font-display text-xl font-bold text-white shadow-sm" aria-hidden="true">R</span>
       <span class="leading-tight">
         <strong class="block font-display text-lg text-navy-950">Rick's Colonial</strong>
         <span class="text-xs font-bold uppercase tracking-[0.18em] text-gold-500">Painting</span>
@@ -28,7 +28,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
           href={href}
           aria-current={isActive(href) ? 'page' : undefined}
           class:list={[
-            'text-sm font-bold transition-colors hover:text-gold-500 focus-visible:text-gold-500',
+            'nav-link text-sm font-bold transition-colors hover:text-gold-500 focus-visible:text-gold-500',
             isActive(href) ? 'text-gold-500' : 'text-navy-900',
           ]}
         >{label}</a>
@@ -40,16 +40,16 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
       <a class="button-primary" href="/contact">Free Estimate</a>
     </div>
 
-    <button class="menu-toggle grid size-11 place-items-center rounded-lg border border-navy-900/15 text-navy-900 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" type="button">
+    <button class="menu-toggle grid size-11 place-items-center rounded-full border border-navy-900/15 text-navy-900 transition-colors hover:border-gold-500 hover:text-gold-500 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" type="button">
       <span class="sr-only">Open navigation</span>
-      <span aria-hidden="true">☰</span>
+      <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-navy-900/10 bg-warm-50 lg:hidden">
+  <div id="mobile-menu" class="hidden border-t border-navy-900/10 bg-warm-50/98 shadow-xl lg:hidden">
     <nav class="site-container grid gap-1 py-4" aria-label="Mobile navigation">
       {navItems.map(([label, href]) => (
-        <a href={href} aria-current={isActive(href) ? 'page' : undefined} class="rounded-lg px-4 py-3 font-bold text-navy-900 hover:bg-sand-100">{label}</a>
+        <a href={href} aria-current={isActive(href) ? 'page' : undefined} class:list={['rounded-xl px-4 py-3 font-bold transition-colors hover:bg-sand-100', isActive(href) ? 'bg-sand-100 text-gold-500' : 'text-navy-900']}>{label}</a>
       ))}
       <a href="/contact" class="button-primary mt-3">Free Estimate</a>
     </nav>
@@ -58,11 +58,17 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
 
 <script>
   const initializeHeader = () => {
+    const header = document.querySelector<HTMLElement>('[data-site-header]');
     const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
     const menu = document.querySelector<HTMLElement>('#mobile-menu');
-    if (!toggle || !menu || toggle.dataset.initialized === 'true') return;
+    if (!header || !toggle || !menu || toggle.dataset.initialized === 'true') return;
 
     toggle.dataset.initialized = 'true';
+    const updateHeader = () => {
+      header.dataset.scrolled = String(window.scrollY > 12);
+    };
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
     const closeMenu = () => {
       toggle.setAttribute('aria-expanded', 'false');
       toggle.querySelector('.sr-only')!.textContent = 'Open navigation';

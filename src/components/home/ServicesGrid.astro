@@ -25,7 +25,7 @@ import { services } from '../../data/home';
 
     <div class="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {services.slice(2).map((service) => (
-        <article class="group overflow-hidden rounded-card border border-navy-900/10 bg-white shadow-soft" data-reveal>
+        <article class="premium-card group overflow-hidden rounded-card" data-reveal>
           <div class="aspect-[4/3] overflow-hidden">
             <img src={service.image} alt="" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>

@@ -1,0 +1,21 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import EstimateCTA from '../components/home/EstimateCTA.astro';
+import MobileCtaBar from '../components/home/MobileCtaBar.astro';
+---
+<MainLayout
+  title="Customer Reviews | Rick's Colonial Painting"
+  description="Read what Connecticut homeowners value about working with Rick's Colonial Painting."
+>
+  <PageHero
+    eyebrow="Customer reviews"
+    title="Trusted in homes across Central Connecticut."
+    intro="Careful preparation matters. So do clear communication, respect for your home, and a finished result you’re proud to live with."
+    image="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=88"
+  />
+  <Testimonials />
+  <EstimateCTA />
+  <MobileCtaBar />
+</MainLayout>
