@@ -84,18 +84,28 @@ export const galleryItems = [
 
 export const testimonials = [
   {
-    quote: 'Rick and his crew handled every detail professionally. The preparation was thorough, the job stayed clean, and the finished rooms look exceptional.',
+    quote: 'They painted the walls and kitchen ceiling in a two-bedroom townhouse with a partially finished basement. There was also a two-story foyer included in his price. Rick was prompt, his estimate was the lowest of the three companies, and his crew cleaned up very well before leaving. Great job!',
     name: 'Homeowner',
-    location: 'Farmington Valley',
+    location: 'Avon, CT',
   },
   {
-    quote: 'Communication was excellent from the estimate through the final walkthrough. We always knew what was happening and the work was completed with care.',
+    quote: 'Great work! Very professional and pleasant to deal with. The color is great, with careful attention to detail on trim and elsewhere. The work was finished on time and within budget. I have recommended him to friends and will continue to do so. I hope to have him back soon to do the upstairs!',
     name: 'Homeowner',
-    location: 'Greater Hartford',
+    location: 'Simsbury, CT',
   },
   {
-    quote: 'The exterior looks completely renewed. The crew was respectful of the property and the quality of the finish exceeded our expectations.',
+    quote: 'Rick did a great job. I wanted to paint my new place before I moved in, and he was ready to go within a week of my initial call. They painted the living room with vaulted ceiling, dining room, kitchen, two bedrooms, hallway, and foyer. The whole thing was done within two days of work.',
     name: 'Homeowner',
-    location: 'Central Connecticut',
+    location: 'Enfield, CT',
+  },
+  {
+    quote: 'Great job painting the exterior of my four-bedroom Colonial. I’m happy with the work, and the crew was very professional and polite. As promised, Rick was here from start to finish—not just at the end of the job to pick up the payment. I would recommend Rick’s Colonial Painting to anyone.',
+    name: 'Homeowner',
+    location: 'Avon, CT',
+  },
+  {
+    quote: 'Very, very happy with this contractor. Rick and his crew removed the wallpaper on every wall and painted all the walls in our 1,700-square-foot home, including repairs and skim coating where needed. They did an outstanding job for a very reasonable price. The results are beautiful, and we will be hiring them again.',
+    name: 'Homeowner',
+    location: 'Wethersfield, CT',
   },
 ] as const;

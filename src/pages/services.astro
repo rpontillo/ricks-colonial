@@ -6,7 +6,7 @@ import ProcessSteps from '../components/services/ProcessSteps.astro';
 import FaqList from '../components/shared/FaqList.astro';
 import EstimateCTA from '../components/home/EstimateCTA.astro';
 import MobileCtaBar from '../components/home/MobileCtaBar.astro';
-import { serviceDetails, serviceFaqs } from '../data/services';
+import { additionalServices, serviceDetails, serviceFaqs } from '../data/services';
 ---
 <MainLayout title="Painting Services | Rick's Colonial Painting" description="Interior painting, exterior painting, deck restoration, cabinet painting, power washing, and light commercial painting in Central Connecticut.">
   <PageHero eyebrow="Painting services" title="Careful work. Lasting finishes." intro="Every project is built around the same fundamentals: clear communication, thorough preparation, quality materials, and respect for the property." image="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2000&q=88" />
@@ -20,8 +20,7 @@ import { serviceDetails, serviceFaqs } from '../data/services';
               <img src={service.image} alt={service.title} class="aspect-4/3 size-full object-cover" loading="lazy" />
             </div>
             <div>
-              <p class="font-display text-5xl text-gold-500">{service.number}</p>
-              <h2 class="mt-4 text-4xl sm:text-5xl">{service.title}</h2>
+              <h2 class="text-4xl sm:text-5xl">{service.title}</h2>
               <p class="mt-5 text-xl font-semibold leading-8 text-navy-900">{service.summary}</p>
               <p class="mt-5 leading-8">{service.description}</p>
               <ul class="mt-7 grid gap-3 sm:grid-cols-2">{service.features.map((feature) => <li class="check-item">{feature}</li>)}</ul>
@@ -30,6 +29,13 @@ import { serviceDetails, serviceFaqs } from '../data/services';
           </article>
         ))}
       </div>
+      <aside class="mt-20 rounded-card border border-navy-900/10 bg-sand-100 p-7 sm:p-10 lg:mt-28" data-reveal>
+        <p class="eyebrow">Additional capabilities</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Preparation and repair work that supports a lasting finish.</h2>
+        <ul class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {additionalServices.map((service) => <li class="check-item font-bold text-navy-900">{service}</li>)}
+        </ul>
+      </aside>
     </div>
   </section>
   <section class="section-space bg-sand-100">

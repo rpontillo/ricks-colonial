@@ -10,7 +10,7 @@ import { testimonials } from '../../data/home';
     <div class="mt-12 grid gap-6 lg:grid-cols-3">
       {testimonials.map((testimonial) => (
         <figure class="premium-card rounded-card p-7 sm:p-8" data-reveal>
-          <div class="tracking-[.14em] text-gold-500" aria-label="Five stars">★★★★★</div>
+          <div class="font-display text-4xl leading-none text-gold-500" aria-hidden="true">“</div>
           <blockquote class="mt-5 font-display text-xl leading-8 text-navy-950">“{testimonial.quote}”</blockquote>
           <figcaption class="mt-7 border-t border-navy-900/10 pt-5">
             <strong class="block text-sm text-navy-950">{testimonial.name}</strong>
@@ -19,6 +19,5 @@ import { testimonials } from '../../data/home';
         </figure>
       ))}
     </div>
-    <p class="mt-6 text-center text-xs text-slate-700/60">Replace these representative review cards with approved customer testimonials before launch.</p>
   </div>
 </section>

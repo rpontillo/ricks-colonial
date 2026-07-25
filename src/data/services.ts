@@ -1,34 +1,30 @@
 export const serviceDetails = [
   {
     id: 'interior',
-    number: '01',
     title: 'Interior Painting',
     summary: 'Thoughtful preparation and refined finishes for the rooms where life happens.',
-    description: 'From a single room refresh to a full-home repaint, every interior project begins with protection and preparation. Surfaces are repaired, sanded, primed where needed, and finished with crisp lines and even coverage.',
+    description: 'From a single room refresh to a full-home repaint, every interior project begins with protecting your property and preparing the surface. Wallpaper can be removed, sheetrock repaired, and walls sanded and primed where needed before crisp, even finish coats are applied.',
     image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85',
-    features: ['Walls and ceilings', 'Trim, doors, and molding', 'Drywall repair and patching', 'Color transitions and accent walls'],
+    features: ['Walls and ceilings', 'Trim, doors, and molding', 'Wallpaper removal', 'Sheetrock repair and patching'],
   },
   {
     id: 'exterior',
-    number: '02',
     title: 'Exterior Painting',
     summary: 'Durable protection that preserves architectural character and curb appeal.',
-    description: 'Connecticut weather demands more than a quick coat of paint. Exterior work includes careful inspection, washing, scraping, sanding, spot priming, caulking, and application of coatings selected for the surface and exposure.',
+    description: 'A fresh exterior finish does more than improve curb appeal—it helps protect your home from harsh weather and environmental wear. Work includes careful inspection, washing, scraping, sanding, spot priming, caulking, and coatings selected for the surface and exposure.',
     image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1400&q=85',
-    features: ['Siding and trim', 'Doors, shutters, and porches', 'Surface preparation and repairs', 'Weather-resistant finish systems'],
+    features: ['Wood and aluminum siding', 'Doors, shutters, and porches', 'Window glazing and light repairs', 'Brush, roller, and spray application'],
   },
   {
     id: 'decks',
-    number: '03',
     title: 'Deck Restoration',
     summary: 'Restore weathered wood and protect outdoor spaces for seasons to come.',
-    description: 'Deck restoration combines surface cleaning, sanding, selective repairs, and a finish chosen for the wood condition and desired appearance. The result is a cleaner, safer, and more inviting outdoor space.',
+    description: 'Deck restoration combines power washing, sanding, selective repairs, and staining with a finish chosen for the condition of the wood and the appearance you want. The result is a cleaner, safer, and more inviting outdoor space.',
     image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85',
     features: ['Cleaning and mildew treatment', 'Sanding and surface prep', 'Solid and semi-transparent stains', 'Railings, stairs, and trim'],
   },
   {
     id: 'cabinets',
-    number: '04',
     title: 'Cabinet Painting',
     summary: 'A precise, furniture-like finish without the cost of replacing sound cabinetry.',
     description: 'Cabinet projects are approached as finish work, not wall painting. Doors and hardware are methodically labeled, surfaces are cleaned and prepared, and durable coatings are applied for a smooth, cohesive result.',
@@ -37,16 +33,14 @@ export const serviceDetails = [
   },
   {
     id: 'power-washing',
-    number: '05',
     title: 'Power Washing',
     summary: 'Professional cleaning for a healthier surface and a stronger finish.',
-    description: 'Power washing removes dirt, mildew, pollen, and surface buildup from siding, decks, patios, and other exterior areas. Pressure and cleaning methods are adjusted to suit each material.',
+    description: 'Power washing removes dirt, mildew, pollen, and surface buildup from siding, decks, patios, and other exterior areas. It can be provided as a stand-alone service or as essential preparation before painting or staining.',
     image: 'https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1400&q=85',
     features: ['Siding and trim cleaning', 'Deck and patio washing', 'Pre-paint preparation', 'Material-appropriate pressure'],
   },
   {
     id: 'commercial',
-    number: '06',
     title: 'Light Commercial Painting',
     summary: 'Dependable scheduling and professional results for working spaces.',
     description: 'Offices, retail spaces, and small commercial properties need a contractor who communicates clearly and minimizes disruption. Work is planned around access, operations, and project priorities.',
@@ -56,10 +50,19 @@ export const serviceDetails = [
 ] as const;
 
 export const processSteps = [
-  { number: '01', title: 'Walkthrough & estimate', text: 'We review the space, surfaces, priorities, and timing, then provide a clear project estimate.' },
-  { number: '02', title: 'Preparation plan', text: 'Furniture, floors, landscaping, and adjacent surfaces are protected before repairs and prep begin.' },
-  { number: '03', title: 'Professional application', text: 'Coatings are applied using the tools and techniques best suited to each surface and finish.' },
-  { number: '04', title: 'Final walkthrough', text: 'The work area is cleaned and the completed project is reviewed with you before closeout.' },
+  { title: 'Walkthrough & estimate', text: 'We review the space, surfaces, priorities, and timing, then provide a clear project estimate.' },
+  { title: 'Preparation plan', text: 'Furniture, floors, landscaping, and adjacent surfaces are protected before repairs and thorough surface preparation begin.' },
+  { title: 'Professional application', text: 'Coatings are applied using the tools and techniques best suited to each surface and finish.' },
+  { title: 'Clean finish', text: 'The home is kept neat at the end of each workday, then the completed project is cleaned and reviewed with you.' },
+] as const;
+
+export const additionalServices = [
+  'Wallpaper removal',
+  'Fire-damage repair',
+  'Window glazing',
+  'Sheetrock repair',
+  'Waterproofing',
+  'Light carpentry',
 ] as const;
 
 export const serviceFaqs = [
