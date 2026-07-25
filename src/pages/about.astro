@@ -15,11 +15,10 @@ const values = [
   <PageHero eyebrow="About us" title="Experience you can see in the details." intro="For more than four decades, Rick’s Colonial Painting has helped Connecticut homeowners protect and transform the places they call home." image="/images/projects/colonial-05.jpg" />
   <section class="section-space">
     <div class="site-container grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
-      <div class="relative">
+      <div>
         <img src="/images/projects/colonial-08.jpg" alt="Rick with the company painting vans" class="aspect-4/5 w-full rounded-card object-cover shadow-soft" />
-        <div class="absolute -bottom-7 -right-2 max-w-52 rounded-card bg-gold-500 p-6 text-white shadow-soft sm:right-8"><strong class="block font-display text-5xl">40+</strong><span class="mt-1 block font-extrabold">years serving Connecticut homeowners</span></div>
       </div>
-      <div class="pt-8 lg:pt-0">
+      <div>
         <SectionIntro eyebrow="Our story" title="A local painting company built on trust." />
         <div class="mt-7 space-y-5 leading-8">
           <p>Rick’s Colonial Painting is a family-owned company serving the Farmington Valley, Greater Hartford, and surrounding Central Connecticut communities. The business has grown through repeat customers, referrals, and a simple belief: careful preparation and honest service create the best long-term results.</p>
@@ -42,7 +41,7 @@ const values = [
     <div class="site-container grid gap-12 lg:grid-cols-2 lg:gap-20">
       <SectionIntro eyebrow="The Rick’s difference" title="Owner supervision from estimate through completion." text="A consistent point of accountability helps prevent the communication gaps common in contractor projects. Questions are answered by someone who understands the estimate, the plan, and the work happening on site." />
       <div class="grid gap-5 sm:grid-cols-2">
-        {['Clear written scope', 'Careful property protection', 'Professional preparation', 'Clean final walkthrough'].map((item, index) => <div class="rounded-card border border-navy-900/10 bg-white p-6 shadow-soft"><span class="font-display text-3xl text-gold-500">0{index + 1}</span><h3 class="mt-4 text-xl">{item}</h3></div>)}
+        {['Clear written scope', 'Careful property protection', 'Professional preparation', 'Clean final walkthrough'].map((item) => <div class="rounded-card border border-navy-900/10 bg-white p-6 shadow-soft"><h3 class="text-xl">{item}</h3></div>)}
       </div>
     </div>
   </section>
