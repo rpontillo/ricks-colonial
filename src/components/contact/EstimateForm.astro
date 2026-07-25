@@ -1,0 +1,13 @@
+<form class="rounded-card bg-white p-6 shadow-soft sm:p-9" method="post" action="#" data-estimate-form>
+  <div class="grid gap-6 sm:grid-cols-2">
+    <label class="form-field"><span>Name *</span><input name="name" autocomplete="name" required /></label>
+    <label class="form-field"><span>Email *</span><input type="email" name="email" autocomplete="email" required /></label>
+    <label class="form-field"><span>Phone *</span><input type="tel" name="phone" autocomplete="tel" required /></label>
+    <label class="form-field"><span>Town / city</span><input name="city" autocomplete="address-level2" /></label>
+    <label class="form-field sm:col-span-2"><span>Project type</span><select name="project"><option value="">Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Deck restoration</option><option>Cabinet painting</option><option>Power washing</option><option>Commercial painting</option></select></label>
+    <label class="form-field sm:col-span-2"><span>Tell us about your project *</span><textarea name="message" rows="6" required placeholder="Rooms or exterior areas, surface condition, timing, and anything else we should know."></textarea></label>
+    <label class="flex items-start gap-3 text-sm leading-6 sm:col-span-2"><input type="checkbox" name="consent" class="mt-1 size-4 accent-navy-800" required /><span>I agree that Rick’s Colonial Painting may contact me about this estimate request.</span></label>
+  </div>
+  <button class="button-primary mt-7 w-full sm:w-auto" type="submit">Request Free Estimate</button>
+  <p class="mt-4 text-sm leading-6 text-slate-700/75">This form requires a production form endpoint before launch. The markup is ready for Netlify Forms, Formspree, Basin, or a custom API.</p>
+</form>

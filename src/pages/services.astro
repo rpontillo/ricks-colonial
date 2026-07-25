@@ -1,12 +1,42 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import SectionIntro from '../components/shared/SectionIntro.astro';
+import ProcessSteps from '../components/services/ProcessSteps.astro';
+import FaqList from '../components/shared/FaqList.astro';
+import EstimateCTA from '../components/home/EstimateCTA.astro';
+import MobileCtaBar from '../components/home/MobileCtaBar.astro';
+import { serviceDetails, serviceFaqs } from '../data/services';
 ---
-<MainLayout title="Services | Rick's Colonial Painting">
-  <section class="min-h-[70vh] bg-cream pt-20">
-    <div class="site-container py-28">
-      <p class="eyebrow">Coming in a later sprint</p>
-      <h1 class="mt-6 max-w-4xl font-display text-6xl font-semibold tracking-tight text-navy-deep md:text-8xl">Services</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-muted">The shared shell, navigation, footer, tokens, and page routing are active. This page is intentionally scaffolded for its dedicated development sprint.</p>
+<MainLayout title="Painting Services | Rick's Colonial Painting" description="Interior painting, exterior painting, deck restoration, cabinet painting, power washing, and light commercial painting in Central Connecticut.">
+  <PageHero eyebrow="Painting services" title="Careful work. Lasting finishes." intro="Every project is built around the same fundamentals: clear communication, thorough preparation, quality materials, and respect for the property." image="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2000&q=88" />
+  <section class="section-space">
+    <div class="site-container">
+      <SectionIntro eyebrow="What we do" title="Complete painting and surface-care services." text="Explore the core services below. Project scope and preparation are tailored to the surface, condition, and finish you want—not forced into a one-size-fits-all package." />
+      <div class="mt-16 space-y-20 lg:space-y-28">
+        {serviceDetails.map((service, index) => (
+          <article id={service.id} class="scroll-mt-28 grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
+            <div class:list={['overflow-hidden rounded-card shadow-soft', index % 2 === 1 && 'lg:order-2']}>
+              <img src={service.image} alt={service.title} class="aspect-[4/3] size-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <p class="font-display text-5xl text-gold-500">{service.number}</p>
+              <h2 class="mt-4 text-4xl sm:text-5xl">{service.title}</h2>
+              <p class="mt-5 text-xl font-semibold leading-8 text-navy-900">{service.summary}</p>
+              <p class="mt-5 leading-8">{service.description}</p>
+              <ul class="mt-7 grid gap-3 sm:grid-cols-2">{service.features.map((feature) => <li class="check-item">{feature}</li>)}</ul>
+              <a class="button-primary mt-8" href="/contact">Request an estimate</a>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
+  <section class="section-space bg-sand-100">
+    <div class="site-container"><SectionIntro eyebrow="Our process" title="A clear path from walkthrough to final coat." /><ProcessSteps /></div>
+  </section>
+  <section class="section-space">
+    <div class="site-container max-w-5xl"><SectionIntro eyebrow="Common questions" title="What homeowners ask before getting started." /><FaqList items={serviceFaqs} /></div>
+  </section>
+  <EstimateCTA /><MobileCtaBar />
 </MainLayout>

@@ -1,0 +1,16 @@
+---
+interface Item { question: string; answer: string; }
+interface Props { items: readonly Item[]; }
+const { items } = Astro.props;
+---
+<div class="mt-10 divide-y divide-navy-900/10 border-y border-navy-900/10">
+  {items.map((item, index) => (
+    <details class="group py-1" open={index === 0}>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-5 py-6 text-left font-display text-xl font-bold text-navy-950 sm:text-2xl">
+        {item.question}
+        <span class="grid size-9 shrink-0 place-items-center rounded-full border border-navy-900/15 font-sans text-lg transition-transform group-open:rotate-45">+</span>
+      </summary>
+      <p class="max-w-3xl pb-7 pr-12 leading-8">{item.answer}</p>
+    </details>
+  ))}
+</div>

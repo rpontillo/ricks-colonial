@@ -1,0 +1,20 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  image?: string;
+}
+const { eyebrow, title, intro, image } = Astro.props;
+---
+<section class:list={['relative isolate overflow-hidden bg-navy-950 text-white', image ? 'min-h-[34rem]' : '']}>
+  {image && <img src={image} alt="" class="absolute inset-0 -z-20 size-full object-cover" fetchpriority="high" />}
+  {image && <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/88 to-navy-950/35"></div>}
+  <div class="site-container flex min-h-[34rem] items-end py-20 sm:py-24 lg:py-28">
+    <div class="max-w-3xl">
+      <p class="eyebrow text-gold-400">{eyebrow}</p>
+      <h1 class="mt-5 text-[clamp(3.2rem,7vw,6.5rem)] leading-[.95] text-white">{title}</h1>
+      <p class="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">{intro}</p>
+    </div>
+  </div>
+</section>

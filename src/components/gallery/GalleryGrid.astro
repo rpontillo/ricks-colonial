@@ -1,0 +1,64 @@
+---
+import { galleryFilters, galleryProjects } from '../../data/gallery';
+---
+<div data-gallery>
+  <div class="flex flex-wrap gap-2" role="group" aria-label="Filter gallery projects">
+    {galleryFilters.map(([value, label], index) => (
+      <button type="button" class:list={['gallery-filter rounded-full border px-5 py-2.5 text-sm font-extrabold transition', index === 0 ? 'border-navy-800 bg-navy-800 text-white' : 'border-navy-900/15 text-navy-900 hover:border-navy-800']} data-filter={value}>{label}</button>
+    ))}
+  </div>
+  <div class="gallery-grid mt-10 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {galleryProjects.map((project) => (
+      <button type="button" class:list={['gallery-item group relative overflow-hidden rounded-card text-left shadow-soft', project.span]} data-category={project.category} data-title={project.title} data-location={project.location} data-image={project.image} aria-label={`View ${project.title}`}>
+        <img src={project.image} alt={project.title} class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+        <span class="absolute inset-0 bg-gradient-to-t from-navy-950/88 via-transparent to-transparent"></span>
+        <span class="absolute inset-x-0 bottom-0 p-6 text-white">
+          <span class="block text-xs font-extrabold uppercase tracking-[.16em] text-gold-400">{project.category}</span>
+          <span class="mt-2 block font-display text-2xl font-bold">{project.title}</span>
+          <span class="mt-1 block text-sm text-white/70">{project.location}</span>
+        </span>
+      </button>
+    ))}
+  </div>
+
+  <dialog class="gallery-dialog m-auto max-h-[92vh] w-[min(92vw,72rem)] overflow-hidden rounded-card bg-navy-950 p-0 text-white shadow-2xl backdrop:bg-navy-950/85">
+    <button type="button" class="gallery-dialog__close absolute right-4 top-4 z-10 grid size-11 place-items-center rounded-full bg-navy-950/75 text-2xl text-white backdrop-blur" aria-label="Close project">×</button>
+    <img class="gallery-dialog__image max-h-[76vh] w-full object-contain" src="" alt="" />
+    <div class="p-5 sm:p-7">
+      <p class="gallery-dialog__location text-xs font-extrabold uppercase tracking-[.16em] text-gold-400"></p>
+      <h2 class="gallery-dialog__title mt-2 text-2xl text-white sm:text-3xl"></h2>
+    </div>
+  </dialog>
+</div>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-gallery]');
+  if (root) {
+    const filters = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const items = [...root.querySelectorAll<HTMLButtonElement>('.gallery-item')];
+    filters.forEach((filter) => filter.addEventListener('click', () => {
+      const value = filter.dataset.filter;
+      filters.forEach((button) => {
+        const active = button === filter;
+        button.classList.toggle('bg-navy-800', active);
+        button.classList.toggle('text-white', active);
+        button.classList.toggle('text-navy-900', !active);
+        button.classList.toggle('border-navy-800', active);
+      });
+      items.forEach((item) => item.hidden = value !== 'all' && item.dataset.category !== value);
+    }));
+    const dialog = root.querySelector<HTMLDialogElement>('.gallery-dialog');
+    const image = root.querySelector<HTMLImageElement>('.gallery-dialog__image');
+    const title = root.querySelector<HTMLElement>('.gallery-dialog__title');
+    const location = root.querySelector<HTMLElement>('.gallery-dialog__location');
+    items.forEach((item) => item.addEventListener('click', () => {
+      if (!dialog || !image || !title || !location) return;
+      image.src = item.dataset.image ?? '';
+      image.alt = item.dataset.title ?? '';
+      title.textContent = item.dataset.title ?? '';
+      location.textContent = item.dataset.location ?? '';
+      dialog.showModal();
+    }));
+    root.querySelector<HTMLButtonElement>('.gallery-dialog__close')?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  }
+</script>
