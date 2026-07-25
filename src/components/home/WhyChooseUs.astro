@@ -1,0 +1,26 @@
+---
+import { reasons } from '../../data/home';
+---
+<section class="section-space bg-white">
+  <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <div class="relative" data-reveal>
+      <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1300&q=85" alt="Painter carefully applying a clean finish" class="aspect-[4/5] w-full rounded-[1.75rem] object-cover shadow-soft" loading="lazy" />
+      <div class="absolute -bottom-5 -right-3 max-w-[15rem] rounded-card bg-navy-950 p-6 text-white shadow-2xl sm:-right-6">
+        <strong class="font-display text-4xl text-gold-400">40+</strong>
+        <p class="mt-2 text-sm font-bold leading-6 text-white/75">Years of experience serving Connecticut homeowners.</p>
+      </div>
+    </div>
+    <div data-reveal>
+      <p class="eyebrow">Why choose Rick’s</p>
+      <h2 class="section-title mt-4">Experience you can see. Service you can trust.</h2>
+      <p class="section-copy mt-6">Rick’s Colonial Painting is built on repeat customers, referrals, and a straightforward promise: communicate clearly, prepare carefully, and complete every project with pride.</p>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+        {reasons.map((reason) => <li class="check-item">{reason}</li>)}
+      </ul>
+      <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+        <a class="button-primary" href="/about">Meet the Company</a>
+        <a class="button-secondary" href="/reviews">Read Reviews</a>
+      </div>
+    </div>
+  </div>
+</section>

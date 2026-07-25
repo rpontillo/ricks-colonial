@@ -1,0 +1,45 @@
+<section class="section-space bg-sand-100">
+  <div class="site-container grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-16">
+    <div class="comparison" data-comparison data-reveal>
+      <div class="comparison__image comparison__image--after">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1500&q=90" alt="Home exterior after a bright paint refresh" loading="lazy" />
+      </div>
+      <div class="comparison__image comparison__image--before" data-before>
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1500&q=70&sat=-70" alt="Home exterior before painting" loading="lazy" />
+      </div>
+      <div class="comparison__divider" data-divider aria-hidden="true"><span>↔</span></div>
+      <label class="sr-only" for="comparison-range">Compare before and after exterior painting</label>
+      <input id="comparison-range" data-range class="comparison__range" type="range" min="0" max="100" value="48" />
+      <span class="comparison__label comparison__label--before">Before</span>
+      <span class="comparison__label comparison__label--after">After</span>
+    </div>
+
+    <div data-reveal>
+      <p class="eyebrow">Featured transformation</p>
+      <h2 class="section-title mt-4">The details matter long before the first finish coat.</h2>
+      <p class="section-copy mt-6">A durable result starts with inspection, repairs, cleaning, sanding, caulking, and proper priming. That preparation is what gives a finished project its crisp appearance and lasting protection.</p>
+      <ul class="mt-7 grid gap-3 text-sm font-bold text-navy-900 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <li class="check-item">Thorough surface preparation</li>
+        <li class="check-item">Premium coating systems</li>
+        <li class="check-item">Clean, precise finish work</li>
+        <li class="check-item">Owner-supervised quality</li>
+      </ul>
+      <a class="button-primary mt-8" href="/gallery">See More Projects</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-comparison]').forEach((comparison) => {
+    const range = comparison.querySelector<HTMLInputElement>('[data-range]');
+    const before = comparison.querySelector<HTMLElement>('[data-before]');
+    const divider = comparison.querySelector<HTMLElement>('[data-divider]');
+    const update = () => {
+      const value = range?.value ?? '50';
+      if (before) before.style.clipPath = `inset(0 ${100 - Number(value)}% 0 0)`;
+      if (divider) divider.style.left = `${value}%`;
+    };
+    range?.addEventListener('input', update);
+    update();
+  });
+</script>
