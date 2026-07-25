@@ -4,7 +4,7 @@ export const serviceDetails = [
     title: 'Interior Painting',
     summary: 'Thoughtful preparation and refined finishes for the rooms where life happens.',
     description: 'From a single room refresh to a full-home repaint, every interior project begins with protecting your property and preparing the surface. Wallpaper can be removed, sheetrock repaired, and walls sanded and primed where needed before crisp, even finish coats are applied.',
-    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/bookcase-after.jpg',
     features: ['Walls and ceilings', 'Trim, doors, and molding', 'Wallpaper removal', 'Sheetrock repair and patching'],
   },
   {
@@ -12,7 +12,7 @@ export const serviceDetails = [
     title: 'Exterior Painting',
     summary: 'Durable protection that preserves architectural character and curb appeal.',
     description: 'A fresh exterior finish does more than improve curb appeal—it helps protect your home from harsh weather and environmental wear. Work includes careful inspection, washing, scraping, sanding, spot priming, caulking, and coatings selected for the surface and exposure.',
-    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/colonial-03.jpg',
     features: ['Wood and aluminum siding', 'Doors, shutters, and porches', 'Window glazing and light repairs', 'Brush, roller, and spray application'],
   },
   {
@@ -20,7 +20,7 @@ export const serviceDetails = [
     title: 'Deck Restoration',
     summary: 'Restore weathered wood and protect outdoor spaces for seasons to come.',
     description: 'Deck restoration combines power washing, sanding, selective repairs, and staining with a finish chosen for the condition of the wood and the appearance you want. The result is a cleaner, safer, and more inviting outdoor space.',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/colonial-01.jpg',
     features: ['Cleaning and mildew treatment', 'Sanding and surface prep', 'Solid and semi-transparent stains', 'Railings, stairs, and trim'],
   },
   {
@@ -28,7 +28,7 @@ export const serviceDetails = [
     title: 'Cabinet Painting',
     summary: 'A precise, furniture-like finish without the cost of replacing sound cabinetry.',
     description: 'Cabinet projects are approached as finish work, not wall painting. Doors and hardware are methodically labeled, surfaces are cleaned and prepared, and durable coatings are applied for a smooth, cohesive result.',
-    image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/cabinets-after.jpg',
     features: ['Kitchen and bath cabinetry', 'Degreasing and adhesion prep', 'Durable enamel finishes', 'Organized removal and reinstallation'],
   },
   {
@@ -36,7 +36,7 @@ export const serviceDetails = [
     title: 'Power Washing',
     summary: 'Professional cleaning for a healthier surface and a stronger finish.',
     description: 'Power washing removes dirt, mildew, pollen, and surface buildup from siding, decks, patios, and other exterior areas. It can be provided as a stand-alone service or as essential preparation before painting or staining.',
-    image: 'https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/colonial-06.jpg',
     features: ['Siding and trim cleaning', 'Deck and patio washing', 'Pre-paint preparation', 'Material-appropriate pressure'],
   },
   {
@@ -44,7 +44,7 @@ export const serviceDetails = [
     title: 'Light Commercial Painting',
     summary: 'Dependable scheduling and professional results for working spaces.',
     description: 'Offices, retail spaces, and small commercial properties need a contractor who communicates clearly and minimizes disruption. Work is planned around access, operations, and project priorities.',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/projects/colonial-07.jpg',
     features: ['Offices and retail interiors', 'Common areas and rental turnovers', 'Flexible scheduling', 'Clean, organized job sites'],
   },
 ] as const;
