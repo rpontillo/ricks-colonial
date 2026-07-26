@@ -20,6 +20,7 @@ import { site } from '../data/site';
     <div>
       <h2 class="font-sans text-sm font-black uppercase tracking-[0.18em] text-gold-400">Contact</h2>
       <address class="mt-4 space-y-3 not-italic text-white/75">
+        <p>{site.addressDisplay}</p>
         <p>{site.region}</p>
         <p><a class="hover:text-white" href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a></p>
         <p><a class="hover:text-white" href={`mailto:${site.email}`}>{site.email}</a></p>

@@ -5,8 +5,8 @@ import EstimateForm from '../components/contact/EstimateForm.astro';
 import MobileCtaBar from '../components/home/MobileCtaBar.astro';
 import { site } from '../data/site';
 ---
-<MainLayout title="Free Painting Estimate | Rick's Colonial Painting LLC" description="Request a free interior or exterior painting estimate from Rick's Colonial Painting LLC in Central Connecticut.">
-  <PageHero eyebrow="Free estimate" title="Tell us about your project." intro="Share a few details below. We’ll follow up to discuss the space, priorities, timing, and the best next step for an accurate estimate." image="/images/projects/colonial-02.jpg" />
+<MainLayout title="Free Painting Estimate | Rick's Colonial Painting LLC" description="Request a free interior or exterior painting estimate from Rick's Colonial Painting LLC in Central Connecticut. Call or send your project details today.">
+  <PageHero eyebrow="Free estimate" title="Tell us about your project." intro="Share a few details below. We’ll follow up to discuss the space, priorities, timing, and the best next step for an accurate estimate." image="/images/projects/colonial-02.webp" />
   <section class="section-space">
     <div class="site-container grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
       <aside>
@@ -16,6 +16,7 @@ import { site } from '../data/site';
         <div class="mt-9 space-y-4">
           <a href={`tel:${site.phoneHref}`} class="contact-card"><span>Call</span><strong>{site.phoneDisplay}</strong></a>
           <a href={`mailto:${site.email}`} class="contact-card"><span>Email</span><strong>{site.email}</strong></a>
+          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.addressDisplay)}`} class="contact-card" target="_blank" rel="noopener noreferrer"><span>Address</span><strong>{site.addressDisplay}</strong></a>
           <div class="contact-card"><span>Service area</span><strong>{site.region}</strong></div>
           <div class="contact-card"><span>Typical hours</span><strong>{site.hours}</strong></div>
         </div>
