@@ -34,15 +34,6 @@ npm run build
 npm run preview
 ```
 
-## Known placeholders
-
-Replace these before production:
-
-- Phone number in `src/components/Header.astro` and `Footer.astro`
-- Email address in `src/components/Footer.astro`
-- Final production photography
-- Final business claims and service-area content
-
 ## Styling approach
 
 Tailwind handles routine styling and responsive layouts. `src/styles/global.css` contains only theme definitions, base primitives, navigation state transitions, and accessibility behavior.
