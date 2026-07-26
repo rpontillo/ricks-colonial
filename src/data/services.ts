@@ -66,7 +66,7 @@ export const additionalServices = [
 ] as const;
 
 export const serviceFaqs = [
-  { question: 'Do you provide free estimates?', answer: 'Yes. Rick’s Colonial Painting provides free project estimates after reviewing the space, surfaces, scope, and scheduling needs.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. Rick’s Colonial Painting LLC provides free project estimates after reviewing the space, surfaces, scope, and scheduling needs.' },
   { question: 'Will you help with paint colors?', answer: 'Yes. We can help narrow color and sheen choices based on lighting, architecture, adjacent finishes, durability needs, and the look you want.' },
   { question: 'How is the home protected during work?', answer: 'Floors, furnishings, fixtures, landscaping, and adjacent surfaces are covered or masked as appropriate. Work areas are kept organized and cleaned throughout the project.' },
   { question: 'What affects the project schedule?', answer: 'Project size, surface condition, repair needs, product cure times, access, and—for exterior work—weather all affect timing. The expected schedule is discussed before work begins.' },

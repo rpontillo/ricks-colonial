@@ -1,6 +1,6 @@
-# Rick's Colonial Painting — Sprint 1
+# Rick's Colonial Painting LLC — Sprint 1
 
-Astro + Tailwind CSS foundation for the Rick's Colonial Painting redesign.
+Astro + Tailwind CSS foundation for the Rick's Colonial Painting LLC redesign.
 
 ## Included
 

@@ -3,7 +3,7 @@
  * Sprint 3 pages use this single source of truth; Header/Footer can be migrated later.
  */
 export const site = {
-  name: "Rick's Colonial Painting",
+  name: "Rick's Colonial Painting LLC",
   phoneDisplay: '(860) 675-6035',
   phoneHref: '+1860676035',
   email: 'RicksColonial@yahoo.com',

@@ -99,7 +99,7 @@ export const testimonials = [
     location: 'Enfield, CT',
   },
   {
-    quote: 'Great job painting the exterior of my four-bedroom Colonial. I’m happy with the work, and the crew was very professional and polite. As promised, Rick was here from start to finish—not just at the end of the job to pick up the payment. I would recommend Rick’s Colonial Painting to anyone.',
+    quote: 'Great job painting the exterior of my four-bedroom Colonial. I’m happy with the work, and the crew was very professional and polite. As promised, Rick was here from start to finish—not just at the end of the job to pick up the payment. I would recommend Rick’s Colonial Painting LLC to anyone.',
     name: 'Homeowner',
     location: 'Avon, CT',
   },

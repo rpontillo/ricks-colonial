@@ -6,7 +6,7 @@ interface Props {
 
 const { compact = false, inverse = false } = Astro.props;
 ---
-<a href="/" class="group inline-flex items-center gap-3" aria-label="Rick's Colonial Painting home">
+<a href="/" class="group inline-flex items-center gap-3" aria-label="Rick's Colonial Painting LLC home">
   <span class:list={["grid shrink-0 place-items-center rounded-full border", compact ? "size-10" : "size-12", inverse ? "border-white/35 text-white" : "border-gold/50 text-navy"]}>
     <svg viewBox="0 0 48 48" class="size-7" aria-hidden="true">
       <path d="M8 23.5 24 10l16 13.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -16,6 +16,6 @@ const { compact = false, inverse = false } = Astro.props;
   </span>
   <span class="leading-none">
     <span class:list={["block font-display text-xl font-semibold tracking-tight sm:text-2xl", inverse ? "text-white" : "text-navy-deep"]}>Rick's Colonial</span>
-    <span class:list={["mt-1 block text-[0.63rem] font-bold uppercase tracking-[0.24em]", inverse ? "text-white/65" : "text-gold"]}>Painting & Restoration</span>
+    <span class:list={["mt-1 block text-[0.63rem] font-bold uppercase tracking-[0.24em]", inverse ? "text-white/65" : "text-gold"]}>Painting LLC & Restoration</span>
   </span>
 </a>
