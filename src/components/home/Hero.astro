@@ -1,7 +1,11 @@
+---
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const heroSrcSet = `${basePath}images/projects/colonial-03-640.webp 640w, ${basePath}images/projects/colonial-03-960.webp 960w, ${basePath}images/projects/colonial-03.webp 1280w`;
+---
 <section class="hero relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-navy-950 text-white">
   <img
     src="/images/projects/colonial-03.webp"
-    srcset="/images/projects/colonial-03-640.webp 640w, /images/projects/colonial-03-960.webp 960w, /images/projects/colonial-03.webp 1280w"
+    srcset={heroSrcSet}
     sizes="100vw"
     alt="Traditional New England Colonial home painted by Rick's Colonial Painting LLC"
     width="1280"
