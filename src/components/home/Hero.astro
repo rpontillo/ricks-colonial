@@ -17,12 +17,12 @@
     muted
     loop
     playsinline
-    preload="metadata"
+    preload="none"
     poster="/images/projects/colonial-03.webp"
     aria-hidden="true"
   >
-    <source src="/videos/ricks-colonial-hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-    <source src="/videos/ricks-colonial-hero.mp4" type="video/mp4" />
+    <source data-src="/videos/ricks-colonial-hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+    <source data-src="/videos/ricks-colonial-hero.mp4" type="video/mp4" />
   </video>
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(20,39,61,0.94)_0%,rgba(20,39,61,0.76)_48%,rgba(20,39,61,0.24)_100%)]"></div>
   <div class="site-container flex min-h-[calc(100svh-5rem)] items-center py-20 sm:py-24">
@@ -61,6 +61,26 @@
     if (!video || !toggle || toggle.dataset.initialized === 'true') return;
 
     toggle.dataset.initialized = 'true';
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+
+    const loadVideo = () => {
+      if (reducedMotion || saveData || video.dataset.loaded === 'true') return;
+      video.dataset.loaded = 'true';
+      video.querySelectorAll<HTMLSourceElement>('source[data-src]').forEach((source) => {
+        source.src = source.dataset.src ?? '';
+      });
+      video.load();
+      void video.play().catch(() => {});
+    };
+
+    if (document.readyState === 'complete') loadVideo();
+    else window.addEventListener('load', loadVideo, { once: true });
+
+    if (reducedMotion || saveData) {
+      toggle.hidden = true;
+    }
+
     const updateToggle = () => {
       const paused = video.paused;
       toggle.setAttribute('aria-pressed', String(paused));

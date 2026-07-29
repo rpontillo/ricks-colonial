@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SeoHead from '../components/seo/SeoHead.astro';
@@ -45,8 +44,7 @@ const seoImageProps = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <SeoHead {title} {description} {noindex} {...seoImageProps} />
-    <LocalBusinessSchema />
-    <ClientRouter />
+    {!noindex && <LocalBusinessSchema {title} {description} />}
     <title>{title}</title>
   </head>
   <body>

@@ -1,6 +1,12 @@
 ---
 import { site } from '../../data/site';
 
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 const homeUrl = new URL('/', Astro.site);
 const pageUrl = new URL(Astro.url.pathname, Astro.site);
 const logoUrl = new URL('/favicon.png', Astro.site);
@@ -71,11 +77,10 @@ const graph: Record<string, unknown>[] = [
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Painting and restoration services',
+      name: 'Painting and surface-care services',
       itemListElement: [
         'Interior Painting',
         'Exterior Painting',
-        'Deck Restoration',
         'Cabinet Painting',
         'Power Washing',
         'Light Commercial Painting',
@@ -90,10 +95,14 @@ const graph: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: pageNames[normalizedPath] ?? site.name,
+    name: title,
+    description,
     isPartOf: { '@id': `${homeUrl}#website` },
     about: { '@id': `${homeUrl}#business` },
     inLanguage: 'en-US',
+    ...(normalizedPath !== '/' && pageNames[normalizedPath]
+      ? { breadcrumb: { '@id': `${pageUrl}#breadcrumb` } }
+      : {}),
   },
 ];
 

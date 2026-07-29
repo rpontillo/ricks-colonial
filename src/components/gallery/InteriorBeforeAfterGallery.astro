@@ -1,86 +1,57 @@
 ---
 import SectionIntro from '../shared/SectionIntro.astro';
 
-const imageRoot = '/images/projects/before-after';
+const imageRoot = '/images/projects';
 const projects = [
   {
-    title: 'Historic home exterior',
-    before: 'IMG_4492-before',
-    after: 'IMG_4529-after',
-    beforePortrait: false,
-    afterPortrait: false,
+    title: 'Kitchen cabinet transformation',
+    before: 'cabinets-before',
+    after: 'cabinets-after',
+    beforeWidth: 1280,
+    beforeHeight: 960,
+    afterWidth: 1280,
+    afterHeight: 960,
   },
   {
-    title: 'Historic home siding',
-    before: 'IMG_4493-before',
-    after: 'IMG_4528-after',
-    beforePortrait: false,
-    afterPortrait: true,
+    title: 'Painted bookcase and millwork',
+    before: 'bookcase-before',
+    after: 'bookcase-after',
+    beforeWidth: 1280,
+    beforeHeight: 960,
+    afterWidth: 1280,
+    afterHeight: 960,
   },
   {
-    title: 'Chimney exterior restoration',
-    before: 'IMG_5895-before',
-    after: 'IMG_5904-after',
-    beforePortrait: true,
-    afterPortrait: true,
-  },
-  {
-    title: 'Residential siding renewal',
-    before: 'IMG_6087-before',
-    after: 'IMG_6103-after',
-    beforePortrait: true,
-    afterPortrait: true,
-  },
-  {
-    title: 'Garage exterior renewal',
-    before: 'IMG_6168-before',
-    after: 'IMG_6190-after',
-    beforePortrait: false,
-    afterPortrait: true,
-  },
-  {
-    title: 'Commercial storefront repaint',
-    before: 'IMG_6243-before',
-    after: 'IMG_6278-after',
-    beforePortrait: true,
-    afterPortrait: false,
-  },
-  {
-    title: 'Commercial service-bay repaint',
-    before: 'IMG_6245-before',
-    after: 'IMG_6279-after',
-    beforePortrait: true,
-    afterPortrait: false,
-  },
-  {
-    title: 'Woodland home exterior',
-    before: 'IMG_6536-before',
-    after: 'IMG_6604-after',
-    beforePortrait: true,
-    afterPortrait: true,
+    title: 'Bathroom color transformation',
+    before: 'bathroom-before',
+    after: 'bathroom-after',
+    beforeWidth: 1280,
+    beforeHeight: 960,
+    afterWidth: 1280,
+    afterHeight: 1706,
   },
 ] as const;
 
-const imageProps = (name: string, portrait: boolean) => ({
+const imageProps = (name: string, width: number, height: number) => ({
   src: `${imageRoot}/${name}.webp`,
-  srcset: `${imageRoot}/${name}-800.webp 800w, ${imageRoot}/${name}.webp 1600w`,
-  width: portrait ? 1200 : 1600,
-  height: portrait ? 1600 : 1200,
+  srcset: `${imageRoot}/${name}-640.webp 640w, ${imageRoot}/${name}-960.webp 960w, ${imageRoot}/${name}.webp 1280w`,
+  width,
+  height,
 });
 ---
-<section class="section-space bg-sand-100" id="before-and-after">
+<section class="section-space bg-white" id="interior-before-and-after">
   <div class="site-container">
     <SectionIntro
-      eyebrow="Before & after"
-      title="Exterior transformations you can see."
-      text="Drag each comparison to reveal the preparation, restoration, and finish work behind these completed projects."
+      eyebrow="Interior before & after"
+      title="Thoughtful changes, room by room."
+      text="Drag each comparison to see how paint, preparation, and careful finish work renewed these interior spaces."
     />
 
     <div class="mt-12 grid gap-10 lg:grid-cols-2">
       {projects.map((project, index) => {
-        const before = imageProps(project.before, project.beforePortrait);
-        const after = imageProps(project.after, project.afterPortrait);
-        const rangeId = `project-comparison-${index + 1}`;
+        const before = imageProps(project.before, project.beforeWidth, project.beforeHeight);
+        const after = imageProps(project.after, project.afterWidth, project.afterHeight);
+        const rangeId = `interior-project-comparison-${index + 1}`;
 
         return (
           <article data-reveal>
@@ -106,7 +77,7 @@ const imageProps = (name: string, portrait: boolean) => ({
 </section>
 
 <script>
-  const initializeBeforeAfterGallery = () => {
+  const initializeInteriorBeforeAfterGallery = () => {
     document.querySelectorAll<HTMLElement>('[data-comparison]').forEach((comparison) => {
       if (comparison.dataset.initialized === 'true') return;
       comparison.dataset.initialized = 'true';
@@ -123,6 +94,6 @@ const imageProps = (name: string, portrait: boolean) => ({
     });
   };
 
-  document.addEventListener('astro:page-load', initializeBeforeAfterGallery);
-  initializeBeforeAfterGallery();
+  document.addEventListener('astro:page-load', initializeInteriorBeforeAfterGallery);
+  initializeInteriorBeforeAfterGallery();
 </script>

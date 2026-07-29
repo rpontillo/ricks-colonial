@@ -4,13 +4,15 @@ import PageHero from '../components/shared/PageHero.astro';
 import SectionIntro from '../components/shared/SectionIntro.astro';
 import ProcessSteps from '../components/services/ProcessSteps.astro';
 import FaqList from '../components/shared/FaqList.astro';
+import FaqSchema from '../components/seo/FaqSchema.astro';
 import EstimateCTA from '../components/home/EstimateCTA.astro';
 import MobileCtaBar from '../components/home/MobileCtaBar.astro';
 import { additionalServices, serviceDetails, serviceFaqs } from '../data/services';
 const imageSrcSet = (src: string) =>
   `${src.replace('.webp', '-640.webp')} 640w, ${src.replace('.webp', '-960.webp')} 960w, ${src} 1280w`;
 ---
-<MainLayout title="Connecticut Painting Services | Rick's Colonial Painting LLC" description="Interior painting, exterior painting, deck restoration, cabinet painting, power washing, and light commercial painting in Central Connecticut.">
+<MainLayout title="Connecticut Painting Services | Rick's Colonial Painting LLC" description="Interior painting, exterior painting, cabinet painting, power washing, and light commercial painting in Central Connecticut.">
+  <FaqSchema items={serviceFaqs} />
   <PageHero eyebrow="Painting services" title="Careful work. Lasting finishes." intro="Every project is built around the same fundamentals: clear communication, thorough preparation, quality materials, and respect for the property." image="/images/projects/colonial-06.webp" />
   <section class="section-space">
     <div class="site-container">

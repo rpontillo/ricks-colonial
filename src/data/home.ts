@@ -14,12 +14,6 @@ export const services = [
     featured: true,
   },
   {
-    title: 'Deck Restoration',
-    description: 'Cleaning, preparation, staining, and protective coatings for weathered decks and outdoor living spaces.',
-    href: '/services#decks',
-    image: '/images/projects/colonial-01.webp',
-  },
-  {
     title: 'Cabinet Painting',
     description: 'A precise, furniture-like finish that refreshes kitchens without the disruption of a full remodel.',
     href: '/services#cabinets',
@@ -75,9 +69,9 @@ export const galleryItems = [
     className: '',
   },
   {
-    title: 'Restored outdoor living',
-    category: 'Deck restoration',
-    image: '/images/projects/colonial-01.webp',
+    title: 'Refinished kitchen cabinetry',
+    category: 'Cabinet painting',
+    image: '/images/projects/cabinets-after.webp',
     className: 'md:col-span-2',
   },
 ] as const;

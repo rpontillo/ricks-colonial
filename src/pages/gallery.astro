@@ -4,10 +4,11 @@ import PageHero from '../components/shared/PageHero.astro';
 import SectionIntro from '../components/shared/SectionIntro.astro';
 import GalleryGrid from '../components/gallery/GalleryGrid.astro';
 import BeforeAfterGallery from '../components/gallery/BeforeAfterGallery.astro';
+import InteriorBeforeAfterGallery from '../components/gallery/InteriorBeforeAfterGallery.astro';
 import EstimateCTA from '../components/home/EstimateCTA.astro';
 import MobileCtaBar from '../components/home/MobileCtaBar.astro';
 ---
-<MainLayout title="Painting Gallery | Rick's Colonial Painting LLC" description="Browse interior, exterior, cabinet, and deck painting projects from Rick's Colonial Painting LLC in Central Connecticut.">
+<MainLayout title="Painting Gallery | Rick's Colonial Painting LLC" description="Browse interior, exterior, cabinet, and commercial painting projects from Rick's Colonial Painting LLC in Central Connecticut.">
   <PageHero eyebrow="Project gallery" title="Transformation lives in the details." intro="Explore exterior, interior, and cabinet projects completed by Rick’s Colonial Painting LLC throughout the region." image="/images/projects/colonial-04.webp" />
   <section class="section-space">
     <div class="site-container">
@@ -15,6 +16,7 @@ import MobileCtaBar from '../components/home/MobileCtaBar.astro';
       <div class="mt-12"><GalleryGrid /></div>
     </div>
   </section>
+  <InteriorBeforeAfterGallery />
   <BeforeAfterGallery />
   <section class="py-20 sm:py-28">
     <div class="site-container"><div class="rounded-card bg-sand-100 p-7 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-12"><div><p class="eyebrow">Proven experience</p><h2 class="mt-3 text-3xl sm:text-4xl">Real projects. Enduring New England character.</h2><p class="mt-4 max-w-2xl leading-7">These projects from the Rick’s Colonial Painting LLC archive reflect decades of work on traditional homes and interiors across the Farmington Valley and Greater Hartford area.</p></div><a href="/contact" class="button-primary mt-7 shrink-0 lg:mt-0">Start a project</a></div></div>

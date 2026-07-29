@@ -16,14 +16,6 @@ export const serviceDetails = [
     features: ['Wood and aluminum siding', 'Doors, shutters, and porches', 'Window glazing and light repairs', 'Brush, roller, and spray application'],
   },
   {
-    id: 'decks',
-    title: 'Deck Restoration',
-    summary: 'Restore weathered wood and protect outdoor spaces for seasons to come.',
-    description: 'Deck restoration combines power washing, sanding, selective repairs, and staining with a finish chosen for the condition of the wood and the appearance you want. The result is a cleaner, safer, and more inviting outdoor space.',
-    image: '/images/projects/colonial-01.webp',
-    features: ['Cleaning and mildew treatment', 'Sanding and surface prep', 'Solid and semi-transparent stains', 'Railings, stairs, and trim'],
-  },
-  {
     id: 'cabinets',
     title: 'Cabinet Painting',
     summary: 'A precise, furniture-like finish without the cost of replacing sound cabinetry.',
@@ -35,9 +27,9 @@ export const serviceDetails = [
     id: 'power-washing',
     title: 'Power Washing',
     summary: 'Professional cleaning for a healthier surface and a stronger finish.',
-    description: 'Power washing removes dirt, mildew, pollen, and surface buildup from siding, decks, patios, and other exterior areas. It can be provided as a stand-alone service or as essential preparation before painting or staining.',
+    description: 'Power washing removes dirt, mildew, pollen, and surface buildup from siding, patios, walkways, and other exterior areas. It can be provided as a stand-alone service or as essential preparation before painting.',
     image: '/images/projects/colonial-06.webp',
-    features: ['Siding and trim cleaning', 'Deck and patio washing', 'Pre-paint preparation', 'Material-appropriate pressure'],
+    features: ['Siding and trim cleaning', 'Patio and walkway washing', 'Pre-paint preparation', 'Material-appropriate pressure'],
   },
   {
     id: 'commercial',
