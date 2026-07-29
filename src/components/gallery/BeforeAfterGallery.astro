@@ -1,0 +1,135 @@
+---
+import SectionIntro from '../shared/SectionIntro.astro';
+
+const imageRoot = '/images/projects/before-after';
+const projects = [
+  {
+    title: 'Historic home exterior',
+    before: 'IMG_4492-before',
+    after: 'IMG_4529-after',
+    beforePortrait: false,
+    afterPortrait: false,
+  },
+  {
+    title: 'Historic home siding',
+    before: 'IMG_4493-before',
+    after: 'IMG_4528-after',
+    beforePortrait: false,
+    afterPortrait: true,
+  },
+  {
+    title: 'Chimney exterior restoration',
+    before: 'IMG_5895-before',
+    after: 'IMG_5904-after',
+    beforePortrait: true,
+    afterPortrait: true,
+  },
+  {
+    title: 'Residential siding renewal',
+    before: 'IMG_6087-before',
+    after: 'IMG_6103-after',
+    beforePortrait: true,
+    afterPortrait: true,
+  },
+  {
+    title: 'Garage exterior renewal',
+    before: 'IMG_6168-before',
+    after: 'IMG_6190-after',
+    beforePortrait: false,
+    afterPortrait: true,
+  },
+  {
+    title: 'Commercial storefront repaint',
+    before: 'IMG_6243-before',
+    after: 'IMG_6278-after',
+    beforePortrait: true,
+    afterPortrait: false,
+  },
+  {
+    title: 'Commercial service-bay repaint',
+    before: 'IMG_6245-before',
+    after: 'IMG_6279-after',
+    beforePortrait: true,
+    afterPortrait: false,
+  },
+  {
+    title: 'Woodland home deck exterior',
+    before: 'IMG_6535-before',
+    after: 'IMG_6606-after',
+    beforePortrait: true,
+    afterPortrait: true,
+  },
+  {
+    title: 'Woodland home exterior',
+    before: 'IMG_6536-before',
+    after: 'IMG_6604-after',
+    beforePortrait: true,
+    afterPortrait: true,
+  },
+] as const;
+
+const imageProps = (name: string, portrait: boolean) => ({
+  src: `${imageRoot}/${name}.webp`,
+  srcset: `${imageRoot}/${name}-800.webp 800w, ${imageRoot}/${name}.webp 1600w`,
+  width: portrait ? 1200 : 1600,
+  height: portrait ? 1600 : 1200,
+});
+---
+<section class="section-space bg-sand-100" id="before-and-after">
+  <div class="site-container">
+    <SectionIntro
+      eyebrow="Before & after"
+      title="Exterior transformations you can see."
+      text="Drag each comparison to reveal the preparation, restoration, and finish work behind these completed projects."
+    />
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-2">
+      {projects.map((project, index) => {
+        const before = imageProps(project.before, project.beforePortrait);
+        const after = imageProps(project.after, project.afterPortrait);
+        const rangeId = `project-comparison-${index + 1}`;
+
+        return (
+          <article data-reveal>
+            <div class="comparison" data-comparison>
+              <div class="comparison__image comparison__image--after">
+                <img {...after} sizes="(min-width: 1024px) 50vw, 100vw" alt={`${project.title} after painting`} loading="lazy" decoding="async" />
+              </div>
+              <div class="comparison__image comparison__image--before" data-before>
+                <img {...before} sizes="(min-width: 1024px) 50vw, 100vw" alt={`${project.title} before painting`} loading="lazy" decoding="async" />
+              </div>
+              <div class="comparison__divider" data-divider aria-hidden="true"><span>↔</span></div>
+              <label class="sr-only" for={rangeId}>Compare {project.title} before and after painting</label>
+              <input id={rangeId} data-range class="comparison__range" type="range" min="0" max="100" value="48" />
+              <span class="comparison__label comparison__label--before">Before</span>
+              <span class="comparison__label comparison__label--after">After</span>
+            </div>
+            <h3 class="mt-5 text-2xl">{project.title}</h3>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<script>
+  const initializeBeforeAfterGallery = () => {
+    document.querySelectorAll<HTMLElement>('[data-comparison]').forEach((comparison) => {
+      if (comparison.dataset.initialized === 'true') return;
+      comparison.dataset.initialized = 'true';
+      const range = comparison.querySelector<HTMLInputElement>('[data-range]');
+      const before = comparison.querySelector<HTMLElement>('[data-before]');
+      const divider = comparison.querySelector<HTMLElement>('[data-divider]');
+      const update = () => {
+        const value = range?.value ?? '50';
+        if (before) before.style.clipPath = `inset(0 ${100 - Number(value)}% 0 0)`;
+        if (divider) divider.style.left = `${value}%`;
+      };
+      range?.addEventListener('input', update);
+      update();
+    });
+  };
+
+  document.addEventListener('astro:page-load', initializeBeforeAfterGallery);
+  initializeBeforeAfterGallery();
+</script>

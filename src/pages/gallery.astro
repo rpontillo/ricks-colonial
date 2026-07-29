@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import PageHero from '../components/shared/PageHero.astro';
 import SectionIntro from '../components/shared/SectionIntro.astro';
 import GalleryGrid from '../components/gallery/GalleryGrid.astro';
+import BeforeAfterGallery from '../components/gallery/BeforeAfterGallery.astro';
 import EstimateCTA from '../components/home/EstimateCTA.astro';
 import MobileCtaBar from '../components/home/MobileCtaBar.astro';
 ---
@@ -14,7 +15,8 @@ import MobileCtaBar from '../components/home/MobileCtaBar.astro';
       <div class="mt-12"><GalleryGrid /></div>
     </div>
   </section>
-  <section class="pb-20 sm:pb-28">
+  <BeforeAfterGallery />
+  <section class="py-20 sm:py-28">
     <div class="site-container"><div class="rounded-card bg-sand-100 p-7 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-12"><div><p class="eyebrow">Proven experience</p><h2 class="mt-3 text-3xl sm:text-4xl">Real projects. Enduring New England character.</h2><p class="mt-4 max-w-2xl leading-7">These projects from the Rick’s Colonial Painting LLC archive reflect decades of work on traditional homes and interiors across the Farmington Valley and Greater Hartford area.</p></div><a href="/contact" class="button-primary mt-7 shrink-0 lg:mt-0">Start a project</a></div></div>
   </section>
   <EstimateCTA /><MobileCtaBar />
