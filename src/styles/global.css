@@ -377,6 +377,35 @@
     box-shadow: 0 10px 35px rgb(7 26 74 / .08);
   }
 
+  .header-brand-name {
+    font-size: 1.875rem;
+  }
+
+  .header-brand-tagline {
+    font-size: .875rem;
+  }
+
+  @media (min-width: 40rem) and (max-width: 63.99rem) {
+    .header-brand-name { font-size: 2.25rem; }
+    .header-brand-tagline {
+      font-size: 1rem;
+      letter-spacing: .18em;
+    }
+  }
+
+  @media (min-width: 64rem) and (max-width: 77.49rem) {
+    .header-brand-name { font-size: 1.5rem; }
+    .header-brand-tagline { font-size: .75rem; }
+  }
+
+  @media (min-width: 77.5rem) {
+    .header-brand-name { font-size: 2.25rem; }
+    .header-brand-tagline {
+      font-size: 1rem;
+      letter-spacing: .18em;
+    }
+  }
+
   .nav-link {
     position: relative;
   }
