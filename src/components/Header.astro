@@ -13,12 +13,12 @@ const currentPath = Astro.url.pathname;
 const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 ---
 <header class="sticky top-0 z-50 border-b border-navy-900/10 bg-warm-50/95 backdrop-blur-xl" data-site-header data-scrolled="false">
-  <div class="site-container flex min-h-19 items-center justify-between gap-6">
+  <div class="site-container flex min-h-19 items-center justify-between gap-3 sm:gap-6">
     <a href="/" class="flex items-center gap-3" aria-label={`${site.name} home`}>
-      <img src="/images/logo-96.webp" alt="" width="96" height="96" class="size-12 shrink-0 rounded-xl shadow-sm" decoding="async" aria-hidden="true" />
+      <img src="/images/logo-96.webp" alt="" width="96" height="96" class="size-10 shrink-0 rounded-xl shadow-sm sm:size-12" decoding="async" aria-hidden="true" />
       <span class="leading-tight">
-        <strong class="block font-masthead text-2xl font-normal leading-none tracking-[-0.02em] text-navy-950">Rick's Colonial</strong>
-        <span class="text-xs font-bold uppercase tracking-[0.18em] text-gold-500">Painting LLC</span>
+        <strong class="block font-masthead text-xl font-normal leading-none tracking-[-0.02em] text-navy-950 sm:text-2xl">Rick's Colonial</strong>
+        <span class="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-gold-500 sm:text-xs sm:tracking-[0.18em]">Painting LLC</span>
       </span>
     </a>
 
@@ -40,7 +40,7 @@ const isActive = (href: string) => href === '/' ? currentPath === '/' : currentP
       <a class="button-primary" href="/contact">Free Estimate</a>
     </div>
 
-    <button class="menu-toggle grid size-11 place-items-center rounded-full border border-navy-900/15 text-navy-900 transition-colors hover:border-gold-500 hover:text-gold-500 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" type="button">
+    <button class="menu-toggle grid size-11 shrink-0 place-items-center rounded-full border border-navy-900/15 text-navy-900 transition-colors hover:border-gold-500 hover:text-gold-500 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" type="button">
       <span class="sr-only">Open navigation</span>
       <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
     </button>
