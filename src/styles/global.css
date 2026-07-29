@@ -367,12 +367,13 @@
   }
 
   [data-site-header] {
-    transition: background-color 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    background: var(--color-warm-50);
+    isolation: isolate;
+    transition: box-shadow 220ms ease, border-color 220ms ease;
   }
 
   [data-site-header][data-scrolled="true"] {
     border-color: rgb(7 26 74 / .08);
-    background: rgb(255 253 249 / .985);
     box-shadow: 0 10px 35px rgb(7 26 74 / .08);
   }
 
