@@ -1,12 +1,12 @@
 ---
 import { trustItems } from '../../data/home';
 ---
-<section aria-label="Company qualifications" class="relative z-10 border-b border-navy-900/10 bg-white shadow-[0_18px_50px_rgb(20_39_61_/_0.06)]">
+<section aria-label="Company qualifications" class="relative z-10 border-b border-navy-900/10 bg-white shadow-[0_18px_50px_rgb(20_39_61/0.06)]">
   <div class="site-container grid grid-cols-2 divide-x divide-y divide-navy-900/10 md:grid-cols-4 md:divide-y-0">
     {trustItems.map((item) => (
       <div class="px-4 py-8 text-center sm:px-8">
         <strong class="block font-display text-3xl text-navy-950 sm:text-4xl">{item.value}</strong>
-        <span class="mt-2 block text-xs font-extrabold uppercase tracking-[.14em] text-slate-700/70">{item.label}</span>
+        <span class="mt-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-slate-700/70">{item.label}</span>
       </div>
     ))}
   </div>

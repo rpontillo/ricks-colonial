@@ -430,6 +430,13 @@
     pointer-events: none;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video,
+    .hero-video-toggle {
+      display: none;
+    }
+  }
+
   .gallery-tile,
   .gallery-item,
   .service-card {

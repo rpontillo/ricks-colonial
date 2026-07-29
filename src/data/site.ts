@@ -3,7 +3,7 @@ export const site = {
   url: 'https://www.rickscolonialpainting.com',
   description: 'Family-owned interior and exterior painting serving the Farmington Valley and Greater Hartford area for over 40 years.',
   phoneDisplay: '(860) 675-6035',
-  phoneHref: '+1860676035',
+  phoneHref: '+18606756035',
   email: 'RicksColonial@yahoo.com',
   owner: 'Rick Pontillo',
   streetAddress: '156 Waterville Road',

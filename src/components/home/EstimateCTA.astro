@@ -1,12 +1,15 @@
+---
+import { site } from '../../data/site';
+---
 <section class="relative isolate overflow-hidden bg-gold-500 py-20 text-white sm:py-24">
-  <div class="absolute inset-0 -z-10 opacity-25 [background-image:radial-gradient(circle_at_15%_20%,white_0,transparent_30%),radial-gradient(circle_at_85%_80%,#071a4a_0,transparent_35%)]"></div>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,white_0,transparent_30%),radial-gradient(circle_at_85%_80%,#071a4a_0,transparent_35%)] opacity-25"></div>
   <div class="site-container text-center" data-reveal>
     <p class="eyebrow text-white/75!">Start a conversation</p>
     <h2 class="mx-auto mt-4 max-w-4xl text-4xl text-white sm:text-5xl lg:text-6xl">Ready to bring new life to your home?</h2>
     <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/80">Tell us about your interior, exterior, or restoration project. We’ll return your call promptly and arrange a free estimate at a convenient time.</p>
     <div class="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
       <a class="button-primary bg-navy-950! hover:bg-navy-800!" href="/contact">Request a Free Estimate</a>
-      <a class="button-secondary border-white/40! text-white! hover:bg-white! hover:text-navy-950!" href="tel:+18606756035">Call (860) 675-6035</a>
+      <a class="button-secondary border-white/40! text-white! hover:bg-white! hover:text-navy-950!" href={`tel:${site.phoneHref}`}>Call {site.phoneDisplay}</a>
     </div>
   </div>
 </section>
