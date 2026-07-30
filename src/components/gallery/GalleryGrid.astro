@@ -1,7 +1,7 @@
 ---
 import { galleryFilters, galleryProjects } from '../../data/gallery';
 const imageSrcSet = (src: string, fullWidth = 1280) =>
-  `${src.replace('.webp', '-640.webp')} 640w, ${src.replace('.webp', '-960.webp')} 960w, ${src} ${fullWidth}w`;
+  `${src.replace('.webp', '-320.webp')} 320w, ${src.replace('.webp', '-480.webp')} 480w, ${src.replace('.webp', '-640.webp')} 640w, ${src.replace('.webp', '-800.webp')} 800w, ${src.replace('.webp', '-960.webp')} 960w, ${src} ${fullWidth}w`;
 ---
 <div data-gallery>
   <div class="flex flex-wrap gap-2" role="group" aria-label="Filter gallery projects">

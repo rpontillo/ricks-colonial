@@ -1,6 +1,6 @@
 ---
 const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const heroSrcSet = `${basePath}images/projects/colonial-03-640.webp 640w, ${basePath}images/projects/colonial-03-960.webp 960w, ${basePath}images/projects/colonial-03.webp 1280w`;
+const heroSrcSet = `${basePath}images/projects/colonial-03-320.webp 320w, ${basePath}images/projects/colonial-03-480.webp 480w, ${basePath}images/projects/colonial-03-640.webp 640w, ${basePath}images/projects/colonial-03-800.webp 800w, ${basePath}images/projects/colonial-03-960.webp 960w, ${basePath}images/projects/colonial-03.webp 1280w`;
 ---
 <section class="hero relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-navy-950 text-white">
   <img
@@ -22,7 +22,6 @@ const heroSrcSet = `${basePath}images/projects/colonial-03-640.webp 640w, ${base
     loop
     playsinline
     preload="none"
-    poster="/images/projects/colonial-03.webp"
     aria-hidden="true"
   >
     <source data-src="/videos/ricks-colonial-hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
