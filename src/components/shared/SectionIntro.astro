@@ -3,7 +3,7 @@ interface Props { eyebrow: string; title: string; text?: string; align?: 'left' 
 const { eyebrow, title, text, align = 'left', inverse = false } = Astro.props;
 ---
 <header class:list={[align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl']}>
-  <p class="eyebrow">{eyebrow}</p>
+  <p class:list={['eyebrow', inverse && 'text-gold-400!']}>{eyebrow}</p>
   <h2 class:list={['section-title mt-4', inverse && 'text-white']}>{title}</h2>
   {text && <p class:list={['section-copy mt-6', align === 'center' && 'mx-auto', inverse && 'text-white/70']}>{text}</p>}
 </header>
