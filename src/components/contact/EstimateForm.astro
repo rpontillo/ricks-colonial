@@ -2,7 +2,7 @@
   <iframe
     src="https://docs.google.com/forms/d/e/1FAIpQLSegYYlOSgqe0ybxH2VQzgyXwNKObFuZZIgS1F69KfhYP5qGMw/viewform?embedded=true"
     title="Request a free painting estimate"
-    class="block min-h-305 w-full border-0 sm:min-h-280"
+    class="estimate-form-frame block w-full border-0"
     loading="lazy"
   ></iframe>
   <p class="border-t border-navy-900/10 p-4 text-center text-sm text-slate-700/75">
@@ -10,3 +10,21 @@
     <a class="font-bold text-navy-800 underline" href="https://forms.gle/DpzxoWiMhwuHp3Jz9">Open it in a new window.</a>
   </p>
 </div>
+
+<style>
+  .estimate-form-frame {
+    height: 105rem;
+  }
+
+  @media (min-width: 375px) {
+    .estimate-form-frame {
+      height: 100rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .estimate-form-frame {
+      height: 95rem;
+    }
+  }
+</style>
