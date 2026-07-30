@@ -21,7 +21,7 @@ const imageSrcSet = (src: string) =>
         {serviceDetails.map((service, index) => (
           <article id={service.id} class="scroll-mt-28 grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
             <div class:list={['overflow-hidden rounded-card shadow-soft', index % 2 === 1 && 'lg:order-2']}>
-              <img src={service.image} srcset={imageSrcSet(service.image)} sizes="(min-width: 1024px) 50vw, 100vw" alt={`${service.title} project by Rick's Colonial Painting LLC`} width="1280" height="960" class="aspect-4/3 size-full object-cover" loading="lazy" decoding="async" />
+              <img src={service.image} srcset={imageSrcSet(service.image)} sizes="(min-width: 1024px) 50vw, 100vw" alt="" width="1280" height="960" class="aspect-4/3 size-full object-cover" loading="lazy" decoding="async" />
             </div>
             <div>
               <h2 class="text-4xl sm:text-5xl">{service.title}</h2>

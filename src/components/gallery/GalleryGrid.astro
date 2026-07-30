@@ -12,7 +12,7 @@ const imageSrcSet = (src: string, fullWidth = 1280) =>
   <div class="gallery-grid mt-10 grid auto-rows-60 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {galleryProjects.map((project) => (
       <button type="button" class:list={['gallery-item group relative overflow-hidden rounded-card text-left shadow-soft', project.span]} data-category={project.category} data-title={project.title} data-location={project.location} data-image={project.image} aria-label={`View ${project.title}`}>
-        <img src={project.image} srcset={imageSrcSet(project.image, 'width' in project ? project.width : 1280)} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt={project.title} width={'width' in project ? project.width : 1280} height={'height' in project ? project.height : 960} class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+        <img src={project.image} srcset={imageSrcSet(project.image, 'width' in project ? project.width : 1280)} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="" width={'width' in project ? project.width : 1280} height={'height' in project ? project.height : 960} class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
         <span class="absolute inset-0 bg-linear-to-t from-navy-950/88 via-transparent to-transparent"></span>
         <span class="absolute inset-x-0 bottom-0 p-6 text-white">
           <span class="block text-xs font-extrabold uppercase tracking-[0.16em] text-white text-over-image">{project.category}</span>
@@ -23,12 +23,12 @@ const imageSrcSet = (src: string, fullWidth = 1280) =>
     ))}
   </div>
 
-  <dialog class="gallery-dialog m-auto max-h-[92vh] w-[min(92vw,72rem)] overflow-hidden rounded-card bg-navy-950 p-0 text-white shadow-2xl backdrop:bg-navy-950/85">
+  <dialog class="gallery-dialog m-auto max-h-[92vh] w-[min(92vw,72rem)] overflow-hidden rounded-card bg-navy-950 p-0 text-white shadow-2xl backdrop:bg-navy-950/85" aria-labelledby="gallery-dialog-title">
     <button type="button" class="gallery-dialog__close absolute right-4 top-4 z-10 grid size-11 place-items-center rounded-full bg-navy-950/75 text-2xl text-white backdrop-blur" aria-label="Close project">×</button>
     <img class="gallery-dialog__image max-h-[76vh] w-full object-contain" src="" alt="" />
     <div class="p-5 sm:p-7">
       <p class="gallery-dialog__location text-xs font-extrabold uppercase tracking-[0.16em] text-gold-400"></p>
-      <h2 class="gallery-dialog__title mt-2 text-2xl text-white sm:text-3xl"></h2>
+      <h2 id="gallery-dialog-title" class="gallery-dialog__title mt-2 text-2xl text-white sm:text-3xl">Project details</h2>
     </div>
   </dialog>
 </div>
@@ -57,7 +57,7 @@ const imageSrcSet = (src: string, fullWidth = 1280) =>
     const location = root.querySelector<HTMLElement>('.gallery-dialog__location');
     items.forEach((item) => item.addEventListener('click', () => {
       if (!dialog || !image || !title || !location) return;
-      image.src = item.dataset.image ?? ''; image.alt = item.dataset.title ?? '';
+      image.src = item.dataset.image ?? ''; image.alt = '';
       title.textContent = item.dataset.title ?? ''; location.textContent = item.dataset.location ?? '';
       dialog.showModal();
     }));

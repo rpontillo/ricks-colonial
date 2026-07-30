@@ -17,7 +17,7 @@ const imageSrcSet = (src: string) =>
     <div class="mt-12 grid auto-rows-64 gap-5 md:grid-cols-3" data-reveal>
       {galleryItems.map((item) => (
         <a href="/gallery" class:list={['gallery-tile group relative overflow-hidden rounded-card', item.className]}>
-          <img src={item.image} srcset={imageSrcSet(item.image)} sizes="(min-width: 768px) 33vw, 100vw" alt={item.title} width="1280" height="960" class="size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+          <img src={item.image} srcset={imageSrcSet(item.image)} sizes="(min-width: 768px) 33vw, 100vw" alt="" width="1280" height="960" class="size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
           <div class="absolute inset-0 bg-linear-to-t from-navy-950/90 via-navy-950/10 to-transparent"></div>
           <div class="absolute inset-x-0 bottom-0 p-6">
             <span class="text-xs font-extrabold uppercase tracking-[0.16em] text-gold-400 text-over-image">{item.category}</span>
