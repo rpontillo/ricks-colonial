@@ -15,7 +15,7 @@ const imageSrcSet = (src: string, fullWidth = 1280) =>
         <img src={project.image} srcset={imageSrcSet(project.image, 'width' in project ? project.width : 1280)} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt={project.title} width={'width' in project ? project.width : 1280} height={'height' in project ? project.height : 960} class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
         <span class="absolute inset-0 bg-linear-to-t from-navy-950/88 via-transparent to-transparent"></span>
         <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-          <span class="block text-xs font-extrabold uppercase tracking-[0.16em] text-white drop-shadow-[0_1px_3px_rgb(7_26_74/0.9)]">{project.category}</span>
+          <span class="block text-xs font-extrabold uppercase tracking-[0.16em] text-white text-over-image">{project.category}</span>
           <span class="mt-2 block font-display text-2xl font-bold drop-shadow-[0_1px_3px_rgb(7_26_74/0.9)]">{project.title}</span>
           <span class="mt-1 block text-sm text-white/70">{project.location}</span>
         </span>

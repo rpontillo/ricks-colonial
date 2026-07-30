@@ -8,7 +8,7 @@ export const services = [
   },
   {
     title: 'Exterior Painting',
-    description: 'Durable exterior systems designed to protect New England homes while restoring crisp architectural character.',
+    description: 'Durable exterior paint systems designed to protect New England homes and highlight crisp architectural character.',
     href: '/services#exterior',
     image: '/images/projects/colonial-03.webp',
     featured: true,
