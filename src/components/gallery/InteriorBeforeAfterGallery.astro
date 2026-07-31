@@ -4,7 +4,7 @@ import SectionIntro from '../shared/SectionIntro.astro';
 const imageRoot = '/images/projects';
 const projects = [
   {
-    title: 'Kitchen cabinet transformation',
+    title: 'Kitchen Cabinet Painting Makeover in Avon, CT',
     before: 'cabinets-before',
     after: 'cabinets-after',
     beforeWidth: 1280,
@@ -13,7 +13,7 @@ const projects = [
     afterHeight: 960,
   },
   {
-    title: 'Painted bookcase and millwork',
+    title: 'Built-In Bookcase and Millwork Painting in Avon, CT',
     before: 'bookcase-before',
     after: 'bookcase-after',
     beforeWidth: 1280,
@@ -22,7 +22,7 @@ const projects = [
     afterHeight: 960,
   },
   {
-    title: 'Bathroom color transformation',
+    title: 'Bathroom Painting and Color Makeover in Avon, CT',
     before: 'bathroom-before',
     after: 'bathroom-after',
     beforeWidth: 1280,
@@ -43,8 +43,8 @@ const imageProps = (name: string, width: number, height: number) => ({
   <div class="site-container">
     <SectionIntro
       eyebrow="Interior before & after"
-      title="Thoughtful changes, room by room."
-      text="Drag each comparison to see how paint, preparation, and careful finish work renewed these interior spaces."
+      title="Interior painting transformations, room by room."
+      text="Explore cabinet, millwork, and bathroom painting projects completed in Avon, CT, then drag each comparison to see how careful preparation and finish work renewed each space."
     />
 
     <div class="mt-12 grid gap-10 lg:grid-cols-2">
@@ -57,13 +57,13 @@ const imageProps = (name: string, width: number, height: number) => ({
           <article data-reveal>
             <div class="comparison" data-comparison>
               <div class="comparison__image comparison__image--after">
-                <img {...after} sizes="(min-width: 1024px) 50vw, 100vw" alt={`${project.title} after painting`} loading="lazy" decoding="async" />
+                <img {...after} sizes="(min-width: 1024px) 50vw, 100vw" alt={`After: ${project.title}`} loading="lazy" decoding="async" />
               </div>
               <div class="comparison__image comparison__image--before" data-before>
-                <img {...before} sizes="(min-width: 1024px) 50vw, 100vw" alt={`${project.title} before painting`} loading="lazy" decoding="async" />
+                <img {...before} sizes="(min-width: 1024px) 50vw, 100vw" alt={`Before: ${project.title}`} loading="lazy" decoding="async" />
               </div>
               <div class="comparison__divider" data-divider aria-hidden="true"><span>↔</span></div>
-              <label class="sr-only" for={rangeId}>Compare {project.title} before and after painting</label>
+              <label class="sr-only" for={rangeId}>Compare before and after photos of {project.title}</label>
               <input id={rangeId} data-range class="comparison__range" type="range" min="0" max="100" value="48" />
               <span class="comparison__label comparison__label--before">Before</span>
               <span class="comparison__label comparison__label--after">After</span>
